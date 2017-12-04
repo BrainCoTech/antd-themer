@@ -1,0 +1,27 @@
+{
+  "name": "antd",
+  "version": "1.0.0",
+  "title": "Ant Design rebuild",
+  "description": "Rebuilding antd with your own theme",
+  "homepage": "http://brainco.tech/",
+  "keywords": ["antd","ui","rebuild","theme"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrainCoTech/antd-themer"
+  },
+  "bugs": {
+    "url": "https://github.com/BrainCoTech/antd-themer/issues"
+  },
+  "files": ["dist"],
+  "license": "MIT",
+  "devDependencies": {
+    "del":"~3.0.0",
+    "gulp":"~3.9.1"
+  },
+  "scripts": {
+    "clean": "gulp clean"
+  },
+  "lint-less": {
+    "{components,theme}/**/*.less": "stylelint --syntax less"
+  }
+}

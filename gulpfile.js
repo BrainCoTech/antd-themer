@@ -25,7 +25,7 @@ gulp.task('copy:themes', function(cb){
 });
 
 gulp.task('copy:dist', function(cb){
-    return gulp.src(WORKSPACE_DIR + DIST_DIR)
+    return gulp.src(WORKSPACE_DIR + DIST_DIR + '/*')
         .pipe(gulp.dest(DIST_DIR));
 })
 

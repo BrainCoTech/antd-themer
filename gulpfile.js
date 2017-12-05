@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const del = require('del');
 var runSequence = require('run-sequence');
 
-const DIST_DIR = './dist';
+const DIST_DIR = 'dist';
 const ANTD_ORIGINAL = 'ant-design/**/*';
 const WORKSPACE_DIR = 'antd-changed/';
 
@@ -22,6 +22,19 @@ gulp.task('copy:components', function(cb){
 gulp.task('copy:themes', function(cb){
     return gulp.src(MODIFIED_THEMES, {base: './'})
         .pipe(gulp.dest(WORKSPACE_DIR + 'components/style'));
+});
+
+gulp.task('copy:dist', function(cb){
+    return gulp.src(WORKSPACE_DIR + DIST_DIR)
+        .pipe(gulp.dest(DIST_DIR));
+})
+
+gulp.task('dist', function(cb){
+    runSequence('clean:dist', 'copy:dist', cb);    
+});
+
+gulp.task('clean:dist', function(cb){
+    return del([DIST_DIR], cb);        
 });
 
 gulp.task('clean:deep', function(cb){

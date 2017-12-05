@@ -1,8 +1,4 @@
 const gulp = require('gulp');
-
-const copy = require('gulp-copy');
-const run = require('gulp-run');
-const rename = require('gulp-rename');
 const del = require('del');
 var runSequence = require('run-sequence');
 

@@ -22,11 +22,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "gulp": "~3.9.1",    
     "del": "~3.0.0",
-    "run-sequence": "~2.2.0",
-    "gulp": "~3.9.1",
-    "gulp-run": "~1.7.1",
-    "gulp-rename": "~1.2.2"
+    "run-sequence": "~2.2.0"
   },
   "scripts": {
     "clean": "gulp clean",    

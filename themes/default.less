@@ -5,8 +5,8 @@
 @ant-prefix             : ant;
 
 // -------- Colors -----------
-@primary-color          : #009688; //CHANGED(Adis): @blue-6;
-@info-color             : #B2DFDB; //CHANGED(Adis): @blue-6;
+@primary-color          : #48bcbc; //CHANGED(Adis): @blue-6;
+@info-color             : @blue-6;
 @success-color          : @green-6;
 @processing-color       : @primary-color;
 @error-color            : @red-6;
@@ -38,8 +38,8 @@
 @font-family            : "Helvetica Neue For Number", @font-family-no-number;
 @code-family            : Consolas, Menlo, Courier, monospace;
 @heading-color          : fade(#000, 85%);
-@text-color             : fade(#000, 65%);
-@text-color-secondary   : fade(#000, 45%);
+@text-color             : #8b8b8b;//CHANGED(Adis):fade(#000, 65%);
+@text-color-secondary   : #bcbcbc;//CHANGED(Adis):fade(#000, 45%);
 @heading-color-dark     : fade(#fff, 100%);
 @text-color-dark        : fade(#fff,85%);
 @text-color-secondary-dark: fade(#fff, 65%);
@@ -101,16 +101,16 @@
 @outline-width          : 2px;
 @outline-color          : @primary-color;
 
-@background-color-light : hsv(0, 0, 98%);  // background of header and selected item
-@background-color-base  : hsv(0, 0, 96%);  // Default grey background color
+@background-color-light : #fefefe;//CHANGED(Adis):hsv(0, 0, 98%);  // background of header and selected item
+@background-color-base  : #f6f6f6;//CHANGED(Adis):hsv(0, 0, 96%);  // Default grey background color
 
 // Disabled states
-@disabled-color         : fade(#000, 25%);
-@disabled-bg            : @background-color-base;
-@disabled-color-dark    : fade(#fff, 35%);
+@disabled-color         : #8b8b8b;//CHANGED(Adis):fade(#000, 25%);
+@disabled-bg            : #dddddd;//CHANGED(Adis):@background-color-base;
+@disabled-color-dark    : #bcbcbc;//CHANGED(Adis):fade(#fff, 35%);
 
 // Shadow
-@shadow-color           : rgba(0, 0, 0, .15);
+@shadow-color           : rgba(216, 216, 216, 0.5);//CHANGED(Adis): rgba(0, 0, 0, .15);
 @box-shadow-base        : @shadow-1-down;
 @shadow-1-up            : 0 2px 8px @shadow-color;
 @shadow-1-down          : 0 2px 8px @shadow-color;
@@ -121,6 +121,7 @@
 // Buttons
 @btn-font-weight        : 400;
 @btn-border-radius-base : @border-radius-base;
+@btn-border-radius-lg   : 20px;//ADDED(adis):
 @btn-border-radius-sm   : @border-radius-base;
 
 @btn-primary-color      : #fff;
@@ -306,7 +307,7 @@
 // ---
 @menu-dark-bg: @layout-header-background;
 @menu-dark-submenu-bg: #000c17;
-@menu-collapsed-width: 80px;
+@menu-collapsed-width: 60px;// CHANGED(Adis): 80px;
 
 // Spin
 // ---

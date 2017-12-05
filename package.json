@@ -22,15 +22,15 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "gulp": "~3.9.1",    
+    "gulp": "~3.9.1",
     "del": "~3.0.0",
     "run-sequence": "~2.2.0"
   },
   "scripts": {
-    "clean": "gulp clean",    
+    "clean": "gulp clean",
     "clean-deep": "gulp clean:deep",
     "setup": "gulp setup && cd antd-changed && npm install && cd ..",
-    "build": "npm run setup && npm run antd-dist && npm run private:dist",    
+    "build": "npm run setup && npm run antd-dist && npm run private:dist",
     "antd-dist": "cd antd-changed && npm run dist && cd ..",
     "private:dist": "gulp dist"
   },

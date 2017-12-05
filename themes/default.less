@@ -39,6 +39,7 @@
 @code-family            : Consolas, Menlo, Courier, monospace;
 @heading-color          : fade(#000, 85%);
 @text-color             : #8b8b8b;//CHANGED(Adis):fade(#000, 65%);
+@text-color-lightblue   : @primary-color; //CHANGED(Noah);
 @text-color-secondary   : #bcbcbc;//CHANGED(Adis):fade(#000, 45%);
 @heading-color-dark     : fade(#fff, 100%);
 @text-color-dark        : fade(#fff,85%);
@@ -103,6 +104,7 @@
 
 @background-color-light : #fefefe;//CHANGED(Adis):hsv(0, 0, 98%);  // background of header and selected item
 @background-color-base  : #f6f6f6;//CHANGED(Adis):hsv(0, 0, 96%);  // Default grey background color
+@background-color-blue   : @primary-color; //CHANGED(Noah): // background of tag new added;
 
 // Disabled states
 @disabled-color         : #8b8b8b;//CHANGED(Adis):fade(#000, 25%);
@@ -112,11 +114,13 @@
 // Shadow
 @shadow-color           : rgba(216, 216, 216, 0.5);//CHANGED(Adis): rgba(0, 0, 0, .15);
 @box-shadow-base        : @shadow-1-down;
+@box-shadow-popconfirm  : @shadow-popconfirm;
 @shadow-1-up            : 0 2px 8px @shadow-color;
 @shadow-1-down          : 0 2px 8px @shadow-color;
 @shadow-1-left          : -2px 0 8px @shadow-color;
 @shadow-1-right         : 2px 0 8px @shadow-color;
 @shadow-2               : 0 4px 12px @shadow-color;
+@shadow-popconfirm      : 0 2px 18px 2px @shadow-color; //CHANGED(Noah), 
 
 // Buttons
 @btn-font-weight        : 400;
@@ -246,6 +250,7 @@
 @input-height-base           : 32px;
 @input-height-lg             : 40px;
 @input-height-sm             : 24px;
+@input-border-radius         : 5px; //CHANGED Noah ; new added
 @input-padding-horizontal    : @control-padding-horizontal - 1px;
 @input-padding-horizontal-base: @input-padding-horizontal;
 @input-padding-horizontal-sm : @control-padding-horizontal-sm - 1px;
@@ -279,9 +284,9 @@
 // Popover
 // ---
 //** Popover body background color
-@popover-bg: #fff;
+@popover-bg: @primary-color;
 //** Popover text color
-@popover-color: @text-color;
+@popover-color: #fff;
 //** Popover maximum width
 @popover-min-width: 177px;
 //** Popover arrow width
@@ -326,8 +331,8 @@
 
 // Tag
 // --
-@tag-default-bg: @background-color-light;
-@tag-default-color: @text-color;
+@tag-default-bg: @background-color-blue; // CHANGED NOAH; background color of tags
+@tag-default-color: @text-color-lightblue; // CHANGED NOAH; text color of tags
 @tag-font-size: @font-size-sm;
 
 // TimePicker
@@ -399,3 +404,7 @@
 // ---
 @pagination-item-size: 32px;
 @pagination-item-size-sm: 24px;
+
+// Select
+// ---
+@selected-text-color: @text-color-lightblue; // Changed Noah

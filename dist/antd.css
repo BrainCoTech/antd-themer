@@ -18523,7 +18523,7 @@ a.ant-notification-notice-close:focus {
   -webkit-transition: background .3s ease;
   transition: background .3s ease;
   text-align: left;
-  color: rgba(0, 0, 0, 0.85);
+  color: #bcbcbc;
   font-weight: 500;
   border-bottom: 1px solid #e8e8e8;
 }

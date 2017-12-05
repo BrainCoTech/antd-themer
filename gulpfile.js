@@ -6,7 +6,7 @@ const DIST_DIR = 'dist';
 const ANTD_ORIGINAL = 'ant-design/**/*';
 const WORKSPACE_DIR = 'antd-changed/';
 
-const MODIFIED_THEMES = ['./index.less', 'themes/*', '!themes/.gitkeep'];
+const MODIFIED_THEMES = ['themes/*', '!themes/.gitkeep'];
 const MODIFIED_COMPONENTS = ['components/**', '!components/.gitkeep'];
 
 gulp.task('copy:original', function(cb){

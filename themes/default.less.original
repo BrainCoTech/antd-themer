@@ -5,8 +5,8 @@
 @ant-prefix             : ant;
 
 // -------- Colors -----------
-@primary-color          : #009688; //CHANGED(Adis): @blue-6;
-@info-color             : #B2DFDB; //CHANGED(Adis): @blue-6;
+@primary-color          : @blue-6;
+@info-color             : @blue-6;
 @success-color          : @green-6;
 @processing-color       : @primary-color;
 @error-color            : @red-6;

@@ -30,7 +30,9 @@
     "clean": "gulp clean",    
     "clean-deep": "gulp clean:deep",
     "setup": "gulp setup && cd antd-changed && npm install && cd ..",
-    "build": "gulp setup && cd antd-changed && npm install && npm run dist && cd .. && rm -rf dist && cp -r ./antd-changed/dist ./"    
+    "build": "npm run setup && npm run antd-dist && npm run private:dist",    
+    "antd-dist": "cd antd-changed && npm run dist && cd ..",
+    "private:dist": "gulp dist"
   },
   "lint-less": {
     "{components,theme}/**/*.less": "stylelint --syntax less"

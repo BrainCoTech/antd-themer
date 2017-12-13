@@ -4631,7 +4631,7 @@ textarea.ant-input {
   pointer-events: none;
 }
 .ant-btn-lg {
-  padding: 0 15px;
+  padding: 0 35px;
   font-size: 14px;
   border-radius: 20px;
   height: 40px;
@@ -5253,7 +5253,7 @@ textarea.ant-input {
   z-index: 0;
 }
 .ant-btn-group-lg > .ant-btn {
-  padding: 0 15px;
+  padding: 0 35px;
   font-size: 14px;
   border-radius: 20px;
   height: 40px;
@@ -12007,7 +12007,7 @@ span.ant-radio + * {
   pointer-events: none;
 }
 .ant-calendar .ant-calendar-ok-btn-lg {
-  padding: 0 15px;
+  padding: 0 35px;
   font-size: 14px;
   border-radius: 20px;
   height: 40px;

@@ -18547,7 +18547,7 @@ a.ant-notification-notice-close:focus {
   overflow: hidden;
 }
 .ant-table-thead > tr > th {
-  background: #f6f6f6;
+  background: transparent;
   -webkit-transition: background .3s ease;
   transition: background .3s ease;
   text-align: left;
@@ -18604,7 +18604,7 @@ a.ant-notification-notice-close:focus {
 }
 .ant-table-footer {
   padding: 16px 16px;
-  background: #f6f6f6;
+  background: transparent;
   border-radius: 0 0 4px 4px;
   position: relative;
   border-top: 1px solid #e8e8e8;
@@ -18612,7 +18612,7 @@ a.ant-notification-notice-close:focus {
 .ant-table-footer:before {
   content: '';
   height: 1px;
-  background: #f6f6f6;
+  background: transparent;
   position: absolute;
   top: -1px;
   width: 100%;
@@ -18677,7 +18677,7 @@ a.ant-notification-notice-close:focus {
   width: 50px;
 }
 .ant-table-header {
-  background: #f6f6f6;
+  background: transparent;
   overflow: hidden;
 }
 .ant-table-header table {

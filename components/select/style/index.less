@@ -76,7 +76,7 @@
   &-selection {
     outline: none;
     user-select: none;
-    color: @selected-text-color; // CHANGED Noah; New Added
+    color: @selected-text-color; //ADDED(Noah); New Added
 
     box-sizing: border-box;
     display: block;
@@ -84,6 +84,9 @@
     background-color: @component-background;
     border-radius: @border-radius-base;
     border: @border-width-base @border-style-base @border-color-base;
+    // strange align fix for chrome but works
+    // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
+    border-top-width: @border-width-base + 0.02px;
     transition: all .3s @ease-in-out;
 
     &:hover {
@@ -167,6 +170,7 @@
   }
 
   &-lg {
+    font-size: @font-size-lg;
     .@{select-prefix-cls}-selection--single {
       height: @input-height-lg;
     }

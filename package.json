@@ -24,7 +24,7 @@
   "devDependencies": {
     "gulp": "~3.9.1",
     "del": "~3.0.0",
-    "run-sequence": "~2.2.0"
+    "run-sequence": "~2.2.1"
   },
   "scripts": {
     "clean": "gulp clean",

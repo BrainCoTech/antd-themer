@@ -6,8 +6,9 @@ const DIST_DIR = 'dist';
 const ANTD_ORIGINAL = 'ant-design/**/*';
 const WORKSPACE_DIR = 'antd-changed/';
 
-const MODIFIED_THEMES = ['themes/*', '!themes/.gitkeep'];
-const MODIFIED_COMPONENTS = ['components/**', '!components/.gitkeep'];
+const MODIFIED_THEMES = ['themes/*', /*'!themes/.gitkeep'*/];
+const MODIFIED_FONTS = ['fonts/**/*', /*'!fonts/.gitkeep'*/];
+const MODIFIED_COMPONENTS = ['components/**', /*'!components/.gitkeep'*/];
 
 gulp.task('copy:original', function(cb){
     return gulp.src(ANTD_ORIGINAL)
@@ -24,10 +25,15 @@ gulp.task('copy:themes', function(cb){
         .pipe(gulp.dest(WORKSPACE_DIR + 'components/style'));
 });
 
+gulp.task('copy:fonts', function(cb){
+    return gulp.src(MODIFIED_FONTS, {base: './'})
+        .pipe(gulp.dest(WORKSPACE_DIR + 'components/style'));
+});
+
 gulp.task('copy:dist', function(cb){
     return gulp.src(WORKSPACE_DIR + DIST_DIR + '/*')
         .pipe(gulp.dest(DIST_DIR));
-})
+});
 
 gulp.task('dist', function(cb){
     runSequence('clean:dist', 'copy:dist', cb);    
@@ -46,5 +52,5 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('setup', function(cb) {
-    runSequence('clean', 'copy:original', 'copy:components', 'copy:themes', cb);
+    runSequence('clean', 'copy:original', 'copy:components', 'copy:themes', 'copy:fonts', cb);
 });

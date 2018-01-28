@@ -1,6 +1,6 @@
 /*!
  * 
- * antd v3.1.3
+ * antd v3.1.6
  * 
  * Copyright 2015-present, Alipay, Inc.
  * All rights reserved.
@@ -13745,7 +13745,7 @@ Input.propTypes = {
     type: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.string,
     id: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.number]),
     size: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(['small', 'default', 'large']),
-    maxLength: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.string,
+    maxLength: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.number]),
     disabled: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.bool,
     value: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.any,
     defaultValue: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.any,
@@ -15042,7 +15042,8 @@ Col.propTypes = {
     sm: objectOrNumber,
     md: objectOrNumber,
     lg: objectOrNumber,
-    xl: objectOrNumber
+    xl: objectOrNumber,
+    xxl: objectOrNumber
 };
 
 /***/ }),
@@ -22938,6 +22939,7 @@ var DropdownButton = function (_React$Component) {
             var dropdownProps = {
                 align: align,
                 overlay: overlay,
+                disabled: disabled,
                 trigger: disabled ? [] : trigger,
                 onVisibleChange: onVisibleChange,
                 placement: placement,
@@ -22959,7 +22961,7 @@ var DropdownButton = function (_React$Component) {
                     dropdownProps,
                     __WEBPACK_IMPORTED_MODULE_5_react__["createElement"](
                         __WEBPACK_IMPORTED_MODULE_6__button__["a" /* default */],
-                        { type: type, disabled: disabled },
+                        { type: type },
                         __WEBPACK_IMPORTED_MODULE_5_react__["createElement"](__WEBPACK_IMPORTED_MODULE_7__icon__["a" /* default */], { type: 'down' })
                     )
                 )
@@ -24084,13 +24086,20 @@ var FormItem = function (_React$Component) {
         // https://github.com/ant-design/ant-design/issues/7351
         var _this = __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_possibleConstructorReturn___default()(this, (FormItem.__proto__ || Object.getPrototypeOf(FormItem)).apply(this, arguments));
 
-        _this.onLabelClick = function () {
+        _this.onLabelClick = function (e) {
+            var label = _this.props.label;
+
             var id = _this.props.id || _this.getId();
             if (!id) {
                 return;
             }
             var controls = document.querySelectorAll('[id="' + id + '"]');
             if (controls.length !== 1) {
+                // Only prevent in default situation
+                // Avoid preventing event in `label={<a href="xx">link</a>}``
+                if (typeof label === 'string') {
+                    e.preventDefault();
+                }
                 var control = __WEBPACK_IMPORTED_MODULE_7_react_dom__["findDOMNode"](_this).querySelector('[id="' + id + '"]');
                 if (control && control.focus) {
                     control.focus();
@@ -25055,7 +25064,7 @@ var Item = function (_React$Component) {
             );
             var mainContent = grid ? __WEBPACK_IMPORTED_MODULE_6_react__["createElement"](
                 __WEBPACK_IMPORTED_MODULE_9__grid__["a" /* Col */],
-                { span: getGrid(grid, 'column'), xs: getGrid(grid, 'xs'), sm: getGrid(grid, 'sm'), md: getGrid(grid, 'md'), lg: getGrid(grid, 'lg'), xl: getGrid(grid, 'xl') },
+                { span: getGrid(grid, 'column'), xs: getGrid(grid, 'xs'), sm: getGrid(grid, 'sm'), md: getGrid(grid, 'md'), lg: getGrid(grid, 'lg'), xl: getGrid(grid, 'xl'), xxl: getGrid(grid, 'xxl') },
                 __WEBPACK_IMPORTED_MODULE_6_react__["createElement"](
                     'div',
                     __WEBPACK_IMPORTED_MODULE_5_babel_runtime_helpers_extends___default()({}, others, { className: classString }),
@@ -25088,7 +25097,8 @@ Item.propTypes = {
     sm: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(GridColumns),
     md: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(GridColumns),
     lg: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(GridColumns),
-    xl: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(GridColumns)
+    xl: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(GridColumns),
+    xxl: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.oneOf(GridColumns)
 };
 Item.contextTypes = {
     grid: __WEBPACK_IMPORTED_MODULE_7_prop_types___default.a.any
@@ -48009,7 +48019,7 @@ var MonthPicker = Object(__WEBPACK_IMPORTED_MODULE_4__wrapPicker__["a" /* defaul
 __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()(DatePicker, {
     RangePicker: Object(__WEBPACK_IMPORTED_MODULE_4__wrapPicker__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_5__RangePicker__["a" /* default */]),
     MonthPicker: MonthPicker,
-    WeekPicker: Object(__WEBPACK_IMPORTED_MODULE_4__wrapPicker__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_6__WeekPicker__["a" /* default */], 'YYYY-Wo')
+    WeekPicker: Object(__WEBPACK_IMPORTED_MODULE_4__wrapPicker__["a" /* default */])(__WEBPACK_IMPORTED_MODULE_6__WeekPicker__["a" /* default */], 'YYYY-wo')
 });
 /* harmony default export */ __webpack_exports__["a"] = (DatePicker);
 
@@ -50517,6 +50527,20 @@ function isEmptyArray(arr) {
     }
     return false;
 }
+function fixLocale(value, localeCode) {
+    if (!localeCode) {
+        return;
+    }
+    if (!value || value.length === 0) {
+        return;
+    }
+    if (value[0]) {
+        value[0].locale(localeCode);
+    }
+    if (value[1]) {
+        value[1].locale(localeCode);
+    }
+}
 
 var RangePicker = function (_React$Component) {
     __WEBPACK_IMPORTED_MODULE_5_babel_runtime_helpers_inherits___default()(RangePicker, _React$Component);
@@ -50551,6 +50575,9 @@ var RangePicker = function (_React$Component) {
         _this.handleOpenChange = function (open) {
             if (!('open' in _this.props)) {
                 _this.setState({ open: open });
+            }
+            if (open === false) {
+                _this.clearHoverValue();
             }
             var onOpenChange = _this.props.onOpenChange;
 
@@ -50676,14 +50703,8 @@ var RangePicker = function (_React$Component) {
                 dateRender = props.dateRender,
                 onCalendarChange = props.onCalendarChange;
 
-            if (value && localeCode) {
-                if (value[0]) {
-                    value[0].locale(localeCode);
-                }
-                if (value[1]) {
-                    value[1].locale(localeCode);
-                }
-            }
+            fixLocale(value, localeCode);
+            fixLocale(showDate, localeCode);
             Object(__WEBPACK_IMPORTED_MODULE_13__util_warning__["a" /* default */])(!('onOK' in props), 'It should be `RangePicker[onOk]`, instead of `onOK`!');
             var calendarClassName = __WEBPACK_IMPORTED_MODULE_11_classnames___default()((_classNames = {}, __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()(_classNames, prefixCls + '-time', showTime), __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()(_classNames, prefixCls + '-range-with-ranges', ranges), _classNames));
             // 需要选择时间时，点击 ok 时才触发 onChange
@@ -51804,7 +51825,7 @@ var WeekPicker = function (_React$Component) {
 /* harmony default export */ __webpack_exports__["a"] = (WeekPicker);
 
 WeekPicker.defaultProps = {
-    format: 'YYYY-Wo',
+    format: 'YYYY-wo',
     allowClear: true
 };
 
@@ -57211,6 +57232,8 @@ MiniSelect.Option = __WEBPACK_IMPORTED_MODULE_6__select__["a" /* default */].Opt
 function setMomentLocale(locale) {
     if (locale && locale.locale) {
         __WEBPACK_IMPORTED_MODULE_7_moment__["locale"](locale.locale);
+    } else {
+        __WEBPACK_IMPORTED_MODULE_7_moment__["locale"]('en');
     }
 }
 
@@ -62118,10 +62141,11 @@ var Table = function (_React$Component) {
             var locale = __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({}, contextLocale, _this.props.locale);
             var _a = _this.props,
                 style = _a.style,
+                loading = _a.loading,
                 className = _a.className,
                 prefixCls = _a.prefixCls,
                 showHeader = _a.showHeader,
-                restProps = __rest(_a, ["style", "className", "prefixCls", "showHeader"]);
+                restProps = __rest(_a, ["style", "loading", "className", "prefixCls", "showHeader"]);
             var data = _this.getCurrentPageData();
             var expandIconAsCell = _this.props.expandedRowRender && _this.props.expandIconAsCell !== false;
             var classString = __WEBPACK_IMPORTED_MODULE_11_classnames___default()((_classNames = {}, __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()(_classNames, prefixCls + '-' + _this.props.size, true), __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()(_classNames, prefixCls + '-bordered', _this.props.bordered), __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()(_classNames, prefixCls + '-empty', !data.length), __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_defineProperty___default()(_classNames, prefixCls + '-without-column-header', !showHeader), _classNames));
@@ -62136,7 +62160,7 @@ var Table = function (_React$Component) {
             if ('expandIconColumnIndex' in restProps) {
                 expandIconColumnIndex = restProps.expandIconColumnIndex;
             }
-            return __WEBPACK_IMPORTED_MODULE_7_react__["createElement"](__WEBPACK_IMPORTED_MODULE_9_rc_table__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({ key: 'table' }, restProps, { onRow: _this.onRow, components: _this.components, prefixCls: prefixCls, data: data, columns: columns, showHeader: showHeader, className: classString, expandIconColumnIndex: expandIconColumnIndex, expandIconAsCell: expandIconAsCell, emptyText: locale.emptyText }));
+            return __WEBPACK_IMPORTED_MODULE_7_react__["createElement"](__WEBPACK_IMPORTED_MODULE_9_rc_table__["a" /* default */], __WEBPACK_IMPORTED_MODULE_2_babel_runtime_helpers_extends___default()({ key: 'table' }, restProps, { onRow: _this.onRow, components: _this.components, prefixCls: prefixCls, data: data, columns: columns, showHeader: showHeader, className: classString, expandIconColumnIndex: expandIconColumnIndex, expandIconAsCell: expandIconAsCell, emptyText: !loading && locale.emptyText }));
         };
         Object(__WEBPACK_IMPORTED_MODULE_17__util_warning__["a" /* default */])(!('columnsPageRange' in props || 'columnsPageSize' in props), '`columnsPageRange` and `columnsPageSize` are removed, please use ' + 'fixed columns instead, see: https://u.ant.design/fixed-columns.');
         _this.columns = props.columns || Object(__WEBPACK_IMPORTED_MODULE_25__util__["c" /* normalizeColumns */])(props.children);
@@ -85613,7 +85637,7 @@ function removeFileItem(file, fileList) {
 /* 817 */
 /***/ (function(module, exports) {
 
-module.exports = {"name":"antd","version":"3.1.3","title":"Ant Design","description":"An enterprise-class UI design language and React-based implementation","homepage":"http://ant.design/","keywords":["ant","design","react","react-component","component","components","ui","framework","frontend"],"contributors":["ant"],"repository":{"type":"git","url":"https://github.com/ant-design/ant-design"},"bugs":{"url":"https://github.com/ant-design/ant-design/issues"},"main":"lib/index.js","module":"es/index.js","files":["dist","lib","es"],"typings":"lib/index.d.ts","license":"MIT","peerDependencies":{"react":">=16.0.0","react-dom":">=16.0.0"},"dependencies":{"array-tree-filter":"^2.0.0","babel-runtime":"6.x","classnames":"~2.2.0","create-react-class":"^15.6.0","css-animation":"^1.2.5","dom-closest":"^0.2.0","enquire.js":"^2.1.1","lodash.debounce":"^4.0.8","moment":"^2.19.3","omit.js":"^1.0.0","prop-types":"^15.5.7","rc-animate":"^2.4.1","rc-calendar":"~9.4.0","rc-cascader":"~0.12.0","rc-checkbox":"~2.1.1","rc-collapse":"~1.7.5","rc-dialog":"~7.1.0","rc-dropdown":"~2.1.0","rc-editor-mention":"^1.0.2","rc-form":"^2.1.0","rc-input-number":"~4.0.0","rc-menu":"~6.2.0","rc-notification":"~3.0.0","rc-pagination":"~1.14.0","rc-progress":"~2.2.2","rc-rate":"~2.4.0","rc-select":"~7.5.0","rc-slider":"~8.5.0","rc-steps":"~3.0.0","rc-switch":"~1.6.0","rc-table":"~6.1.0","rc-tabs":"~9.1.2","rc-time-picker":"~3.2.1","rc-tooltip":"~3.7.0","rc-tree":"~1.7.0","rc-tree-select":"~1.12.0","rc-upload":"~2.4.0","rc-util":"^4.0.4","react-lazy-load":"^3.0.12","react-slick":"~0.16.0","shallowequal":"^1.0.1","warning":"~3.0.0"},"devDependencies":{"@babel/types":"7.0.0-beta.36","@types/react":"^16.0.0","@types/react-dom":"^16.0.0","ansi-styles":"^3.2.0","antd-tools":"^5.0.0","babel-cli":"^6.18.0","babel-eslint":"^8.1.1","babel-plugin-import":"^1.0.0","babel-plugin-transform-runtime":"^6.23.0","babel-preset-es2015":"^6.18.0","babel-preset-react":"^6.16.0","babel-preset-stage-0":"^6.16.0","bezier-easing":"^2.0.3","bisheng":"^0.28.0","bisheng-plugin-antd":"^0.16.0","bisheng-plugin-description":"^0.1.1","bisheng-plugin-react":"^0.6.0","bisheng-plugin-toc":"^0.4.0","color-standalone":"^0.11.6","commander":"^2.11.0","cross-env":"^5.0.3","css-split-webpack-plugin":"^0.2.3","dekko":"^0.2.0","delegate":"^3.1.2","docsearch.js":"^2.5.2","dora-plugin-upload":"^0.3.1","enquire-js":"^0.1.1","enzyme":"^3.1.0","enzyme-adapter-react-16":"^1.0.0","enzyme-to-json":"^3.1.2","eslint":"^4.8.0","eslint-config-airbnb":"latest","eslint-plugin-babel":"^4.0.0","eslint-plugin-import":"^2.2.0","eslint-plugin-jsx-a11y":"^6.0.2","eslint-plugin-markdown":"~1.0.0-beta.4","eslint-plugin-react":"7.5.1","eslint-tinker":"^0.4.0","fetch-jsonp":"^1.0.3","glob":"^7.1.1","immutability-helper":"^2.5.0","jest":"^21.1.0","jsonml.js":"^0.1.0","lint-staged":"^6.0.0","lz-string":"^1.4.4","majo":"^0.4.1","mockdate":"^2.0.1","moment-timezone":"^0.5.5","pre-commit":"^1.2.2","preact":"^8.2.5","preact-compat":"^3.17.0","querystring":"^0.2.0","rc-drawer-menu":"^0.5.3","rc-queue-anim":"^1.4.1","rc-scroll-anim":"^2.2.1","rc-tween-one":"^1.7.2","react":"^16.0.0","react-color":"^2.11.7","react-copy-to-clipboard":"^5.0.0","react-dnd":"^2.5.4","react-dnd-html5-backend":"^2.5.4","react-document-title":"^2.0.1","react-dom":"^16.0.0","react-github-button":"^0.1.1","react-infinite-scroller":"^1.0.15","react-intl":"^2.0.1","react-sublime-video":"^0.2.0","react-virtualized":"~9.13.0","remark-frontmatter":"^1.1.0","remark-parse":"^4.0.0","remark-stringify":"^4.0.0","remark-yaml-config":"^4.0.1","reqwest":"^2.0.5","rimraf":"^2.5.4","scrollama":"^0.6.1","stylelint":"^8.0.0","stylelint-config-standard":"^18.0.0","typescript":"~2.6.1","unified":"^6.1.5","values.js":"^1.0.3","xhr2":"^0.1.3"},"scripts":{"test":"jest --config .jest.js","test-node":"jest --config .jest.node.js","test-all":"./scripts/test-all.sh","lint":"npm run lint:ts && npm run lint:es && npm run lint:demo && npm run lint:style","lint:ts":"npm run tsc && antd-tools run ts-lint","lint:es":"eslint tests site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'","lint:demo":"cross-env RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'","lint:style":"stylelint \"{site,components}/**/*.less\" --syntax less","lint-fix:ts":"npm run tsc && antd-tools run ts-lint-fix","lint-fix":"npm run lint-fix:code && npm run lint-fix:demo","lint-fix:code":"eslint --fix tests site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'","lint-fix:demo":"eslint-tinker ./components/*/demo/*.md","sort-api":"node ./scripts/sort-api-table.js","dist":"antd-tools run dist","compile":"antd-tools run compile","tsc":"tsc","start":"rimraf _site && node ./scripts/generateColorLess.js && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js","start:preact":"node ./scripts/generateColorLess.js && cross-env NODE_ENV=development REACT_ENV=preact bisheng start -c ./site/bisheng.config.js","site":"cross-env NODE_ENV=production bisheng build --ssr -c ./site/bisheng.config.js && node ./scripts/generateColorLess.js","predeploy":"antd-tools run clean && npm run site","deploy":"bisheng gh-pages --push-only","pub":"antd-tools run pub","prepublish":"antd-tools run guard","pre-publish":"npm run test-all && node ./scripts/prepub","authors":"git log --format='%aN <%aE>' | sort -u | grep -v 'users.noreply.github.com' | grep -v 'gitter.im' | grep -v '.local>' | grep -v 'alibaba-inc.com' | grep -v 'alipay.com' | grep -v 'taobao.com' > AUTHORS.txt","lint-staged":"lint-staged","lint-staged:ts":"tsc && node node_modules/tslint/bin/tslint -c node_modules/antd-tools/lib/tslint.json","lint-staged:es":"eslint ./.eslintrc.js ./webpack.config.js","lint-staged:demo":"cross-env RUN_ENV=DEMO eslint --ext '.md'"},"lint-staged":{"components/**/*.tsx":["lint-staged:ts"],"{tests,site,scripts,components}/**/*.{js,jsx}":["lint-staged:es"],"{site,components}/**/*.less":"stylelint --syntax less","components/*/demo/*.md":["lint-staged:demo"]},"pre-commit":["lint-staged"]}
+module.exports = {"name":"antd","version":"3.1.6","title":"Ant Design","description":"An enterprise-class UI design language and React-based implementation","homepage":"http://ant.design/","keywords":["ant","design","react","react-component","component","components","ui","framework","frontend"],"contributors":["ant"],"repository":{"type":"git","url":"https://github.com/ant-design/ant-design"},"bugs":{"url":"https://github.com/ant-design/ant-design/issues"},"main":"lib/index.js","module":"es/index.js","files":["dist","lib","es"],"typings":"lib/index.d.ts","license":"MIT","peerDependencies":{"react":">=16.0.0","react-dom":">=16.0.0"},"dependencies":{"array-tree-filter":"^2.0.0","babel-runtime":"6.x","classnames":"~2.2.0","create-react-class":"^15.6.0","css-animation":"^1.2.5","dom-closest":"^0.2.0","enquire.js":"^2.1.1","lodash.debounce":"^4.0.8","moment":"^2.19.3","omit.js":"^1.0.0","prop-types":"^15.5.7","rc-animate":"^2.4.1","rc-calendar":"~9.4.0","rc-cascader":"~0.12.0","rc-checkbox":"~2.1.1","rc-collapse":"~1.7.5","rc-dialog":"~7.1.0","rc-dropdown":"~2.1.0","rc-editor-mention":"^1.0.2","rc-form":"^2.1.0","rc-input-number":"~4.0.0","rc-menu":"~6.2.0","rc-notification":"~3.0.0","rc-pagination":"~1.14.0","rc-progress":"~2.2.2","rc-rate":"~2.4.0","rc-select":"~7.5.0","rc-slider":"~8.5.0","rc-steps":"~3.0.0","rc-switch":"~1.6.0","rc-table":"~6.1.0","rc-tabs":"~9.1.2","rc-time-picker":"~3.2.1","rc-tooltip":"~3.7.0","rc-tree":"~1.7.0","rc-tree-select":"~1.12.0","rc-upload":"~2.4.0","rc-util":"^4.0.4","react-lazy-load":"^3.0.12","react-slick":"~0.16.0","shallowequal":"^1.0.1","warning":"~3.0.0"},"devDependencies":{"@babel/types":"7.0.0-beta.36","@types/react":"^16.0.0","@types/react-dom":"^16.0.0","ansi-styles":"^3.2.0","antd-tools":"^5.1.0","babel-cli":"^6.18.0","babel-eslint":"^8.1.1","babel-plugin-import":"^1.0.0","babel-plugin-transform-runtime":"^6.23.0","babel-preset-es2015":"^6.18.0","babel-preset-react":"^6.16.0","babel-preset-stage-0":"^6.16.0","bezier-easing":"^2.0.3","bisheng":"^0.28.0","bisheng-plugin-antd":"^0.16.0","bisheng-plugin-description":"^0.1.1","bisheng-plugin-react":"^0.6.0","bisheng-plugin-toc":"^0.4.0","color-standalone":"^0.11.6","commander":"^2.11.0","cross-env":"^5.0.3","css-split-webpack-plugin":"^0.2.3","dekko":"^0.2.0","delegate":"^3.1.2","docsearch.js":"^2.5.2","dora-plugin-upload":"^0.3.1","enquire-js":"^0.1.2","enzyme":"^3.1.0","enzyme-adapter-react-16":"^1.0.0","enzyme-to-json":"^3.1.2","eslint":"^4.8.0","eslint-config-airbnb":"latest","eslint-plugin-babel":"^4.0.0","eslint-plugin-import":"^2.2.0","eslint-plugin-jsx-a11y":"^6.0.2","eslint-plugin-markdown":"~1.0.0-beta.4","eslint-plugin-react":"7.5.1","eslint-tinker":"^0.4.0","fetch-jsonp":"^1.0.3","glob":"^7.1.1","immutability-helper":"^2.5.0","jest":"^21.1.0","jsonml.js":"^0.1.0","lint-staged":"^6.0.0","lz-string":"^1.4.4","majo":"^0.4.1","mockdate":"^2.0.1","moment-timezone":"^0.5.5","pre-commit":"^1.2.2","preact":"^8.2.5","preact-compat":"^3.17.0","querystring":"^0.2.0","rc-drawer-menu":"^0.5.3","rc-queue-anim":"^1.4.1","rc-scroll-anim":"^2.2.1","rc-tween-one":"^1.7.2","react":"^16.0.0","react-color":"^2.11.7","react-copy-to-clipboard":"^5.0.0","react-dnd":"^2.5.4","react-dnd-html5-backend":"^2.5.4","react-document-title":"^2.0.1","react-dom":"^16.0.0","react-github-button":"^0.1.1","react-infinite-scroller":"^1.0.15","react-intl":"^2.0.1","react-sublime-video":"^0.2.0","react-virtualized":"~9.13.0","remark-frontmatter":"^1.1.0","remark-parse":"^4.0.0","remark-stringify":"^4.0.0","remark-yaml-config":"^4.0.1","reqwest":"^2.0.5","rimraf":"^2.5.4","scrollama":"^0.6.1","stylelint":"^8.0.0","stylelint-config-standard":"^18.0.0","typescript":"~2.6.1","unified":"^6.1.5","values.js":"^1.0.3","xhr2":"^0.1.3"},"scripts":{"test":"jest --config .jest.js","test-node":"jest --config .jest.node.js","test-all":"./scripts/test-all.sh","lint":"npm run lint:ts && npm run lint:es && npm run lint:demo && npm run lint:style","lint:ts":"npm run tsc && antd-tools run ts-lint","lint:es":"eslint tests site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'","lint:demo":"cross-env RUN_ENV=DEMO eslint components/*/demo/*.md --ext '.md'","lint:style":"stylelint \"{site,components}/**/*.less\" --syntax less","lint-fix:ts":"npm run tsc && antd-tools run ts-lint-fix","lint-fix":"npm run lint-fix:code && npm run lint-fix:demo","lint-fix:code":"eslint --fix tests site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'","lint-fix:demo":"eslint-tinker ./components/*/demo/*.md","sort-api":"node ./scripts/sort-api-table.js","dist":"antd-tools run dist","compile":"antd-tools run compile","tsc":"tsc","start":"rimraf _site && node ./scripts/generateColorLess.js && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js","start:preact":"node ./scripts/generateColorLess.js && cross-env NODE_ENV=development REACT_ENV=preact bisheng start -c ./site/bisheng.config.js","site":"cross-env NODE_ENV=production bisheng build --ssr -c ./site/bisheng.config.js && node ./scripts/generateColorLess.js","predeploy":"antd-tools run clean && npm run site","deploy":"bisheng gh-pages --push-only","pub":"antd-tools run pub","prepublish":"antd-tools run guard","pre-publish":"npm run test-all && node ./scripts/prepub","authors":"git log --format='%aN <%aE>' | sort -u | grep -v 'users.noreply.github.com' | grep -v 'gitter.im' | grep -v '.local>' | grep -v 'alibaba-inc.com' | grep -v 'alipay.com' | grep -v 'taobao.com' > AUTHORS.txt","lint-staged":"lint-staged","lint-staged:ts":"tsc && node node_modules/tslint/bin/tslint -c node_modules/antd-tools/lib/tslint.json","lint-staged:es":"eslint ./.eslintrc.js ./webpack.config.js","lint-staged:demo":"cross-env RUN_ENV=DEMO eslint --ext '.md'"},"lint-staged":{"components/**/*.tsx":["lint-staged:ts"],"{tests,site,scripts,components}/**/*.{js,jsx}":["lint-staged:es"],"{site,components}/**/*.less":"stylelint --syntax less","components/*/demo/*.md":["lint-staged:demo"]},"pre-commit":["lint-staged"]}
 
 /***/ }),
 /* 818 */

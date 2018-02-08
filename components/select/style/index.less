@@ -58,10 +58,10 @@
     top: 50%;
     right: @control-padding-horizontal - 1px;
     line-height: 1;
-    transform: translateY(-50%);
+    margin-top: -@font-size-sm / 2;
     transform-origin: 50% 50%;
     color: @disabled-color;
-    font-size: 12px;
+    font-size: @font-size-sm;
 
     * {
       display: none;
@@ -457,7 +457,8 @@
     padding-left: 0; // Override default ul/ol
     list-style: none;
     max-height: 250px;
-
+    overflow: auto;
+    
     &-item-group-list {
       margin: 0;
       padding: 0;

@@ -3832,6 +3832,12 @@ mark {
 .ant-select-dropdown-menu-item:hover {
   background-color: #edfcfa;
 }
+.ant-select-dropdown-menu-item:first-child {
+  border-radius: 4px 4px 0 0;
+}
+.ant-select-dropdown-menu-item:last-child {
+  border-radius: 0 0 4px 4px;
+}
 .ant-select-dropdown-menu-item-disabled {
   color: #8b8b8b;
   cursor: not-allowed;
@@ -18625,7 +18631,6 @@ a.ant-notification-notice-close:focus {
   margin: 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
   position: relative;
   border-radius: 4px 4px 0 0;
 }
@@ -18639,7 +18644,6 @@ a.ant-notification-notice-close:focus {
   border-spacing: 0;
   text-align: left;
   border-radius: 4px 4px 0 0;
-  overflow: hidden;
 }
 .ant-table-thead > tr > th {
   background: transparent;

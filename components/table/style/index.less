@@ -33,6 +33,14 @@
     font-weight: 500;
     border-bottom: @border-width-base @border-style-base @border-color-split;
 
+    &:first-child {
+      border-top-left-radius: @border-radius-base;
+    }
+
+    &:last-child {
+      border-top-right-radius: @border-radius-base;
+    }
+
     &[colspan] {
       text-align: center;
       border-bottom: 0;

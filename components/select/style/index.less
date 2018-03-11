@@ -377,11 +377,8 @@
   }
 
   &-open {
-    .@{select-prefix-cls}-arrow {
-      -ms-transform: rotate(180deg);
-      &:before {
-        transform: rotate(180deg);
-      }
+    .@{select-prefix-cls}-arrow:before {
+      transform: rotate(180deg);
     }
     .@{select-prefix-cls}-selection {
       .active();

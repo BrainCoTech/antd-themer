@@ -76,8 +76,8 @@
 
 // LINK
 @link-color             : @primary-color;
-@link-hover-color       : @primary-5;
-@link-active-color      : @primary-7;
+@link-hover-color       : color(~`colorPalette("@{link-color}", 5)`);
+@link-active-color      : color(~`colorPalette("@{link-color}", 7)`);
 @link-decoration        : none;
 @link-hover-decoration  : none;
 
@@ -348,6 +348,7 @@
 @table-header-sort-bg: @background-color-base;
 @table-row-hover-bg: @primary-1;
 @table-selected-row-bg: #fafafa;
+@table-expanded-row-bg: #fbfbfb;
 @table-padding-vertical: 16px;
 @table-padding-horizontal: 16px;
 
@@ -435,6 +436,7 @@
 // ---
 @switch-height: 22px;
 @switch-sm-height: 16px;
+@switch-sm-checked-margin-left: -(@switch-sm-height - 3px);
 @switch-disabled-opacity: 0.4;
 @switch-color: @primary-color;
 

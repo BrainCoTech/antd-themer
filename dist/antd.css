@@ -4420,6 +4420,7 @@ textarea.ant-input {
 .ant-btn:active,
 .ant-btn.active {
   background: #fff;
+  text-decoration: none;
 }
 .ant-btn > i,
 .ant-btn > span {
@@ -18941,10 +18942,10 @@ a.ant-notification-notice-close:focus {
   left: 0;
 }
 .ant-table-column-sorter-up:after {
-  bottom: -2px;
+  bottom: 0;
 }
 .ant-table-column-sorter-down:after {
-  top: 2px;
+  top: 0;
 }
 .ant-table-column-sorter .anticon-caret-up,
 .ant-table-column-sorter .anticon-caret-down {
@@ -19141,7 +19142,6 @@ tr.ant-table-expanded-row:hover {
   overflow-x: hidden;
 }
 .ant-table-scroll table {
-  width: auto;
   min-width: 100%;
 }
 .ant-table-body-inner {

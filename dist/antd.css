@@ -17215,8 +17215,6 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-confirm .ant-confirm-btns button + button {
   border-color: rgba(255, 255, 255, 0.85);
   /*added noah*/
-  color: rgba(0, 0, 0, 0.85);
-  /*added noah*/
   margin-left: 8px;
   margin-bottom: 0;
 }

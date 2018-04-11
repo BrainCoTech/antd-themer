@@ -5477,7 +5477,7 @@ a.ant-btn-sm {
   background-color: #52c41a;
 }
 .ant-badge-status-processing {
-  background-color: #48bcbc;
+  background-color: #f0aa54;
   position: relative;
 }
 .ant-badge-status-processing:after {
@@ -5487,7 +5487,7 @@ a.ant-btn-sm {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 1px solid #48bcbc;
+  border: 1px solid #f0aa54;
   content: '';
   -webkit-animation: antStatusProcessing 1.2s infinite ease-in-out;
           animation: antStatusProcessing 1.2s infinite ease-in-out;
@@ -17165,6 +17165,10 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 }
 .ant-confirm .ant-modal-body {
   padding: 32px 32px 24px;
+  background: #4ebaaa;
+  /*changed noah*/
+  border-radius: 5px;
+  /* changed noah*/
 }
 .ant-confirm-body-wrapper {
   zoom: 1;
@@ -17181,7 +17185,8 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   height: 0;
 }
 .ant-confirm-body .ant-confirm-title {
-  color: rgba(0, 0, 0, 0.85);
+  color: #ffffff;
+  /* changed noah */
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
@@ -17203,7 +17208,15 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   margin-top: 24px;
   float: right;
 }
+.ant-confirm .ant-confirm-btns button {
+  border-color: rgba(255, 255, 255, 0.85);
+  /*added noah*/
+}
 .ant-confirm .ant-confirm-btns button + button {
+  border-color: rgba(255, 255, 255, 0.85);
+  /*added noah*/
+  color: rgba(0, 0, 0, 0.85);
+  /*added noah*/
   margin-left: 8px;
   margin-bottom: 0;
 }
@@ -17685,14 +17698,14 @@ a.ant-notification-notice-close:focus {
   stroke: #f6f6f6;
 }
 .ant-progress-circle-path {
-  stroke: #48bcbc;
+  stroke: #f0aa54;
   -webkit-animation: ant-progress-appear 0.3s;
           animation: ant-progress-appear 0.3s;
 }
 .ant-progress-success-bg,
 .ant-progress-bg {
   border-radius: 100px;
-  background-color: #48bcbc;
+  background-color: #f0aa54;
   -webkit-transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
   transition: all 0.4s cubic-bezier(0.08, 0.82, 0.17, 1) 0s;
   position: relative;
@@ -18180,14 +18193,14 @@ a.ant-notification-notice-close:focus {
   background-color: #e8e8e8;
 }
 .ant-steps-item-process .ant-steps-item-icon {
-  border-color: #48bcbc;
+  border-color: #f0aa54;
   background-color: #fff;
 }
 .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
-  color: #48bcbc;
+  color: #f0aa54;
 }
 .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
-  background: #48bcbc;
+  background: #f0aa54;
 }
 .ant-steps-item-process > .ant-steps-item-content > .ant-steps-item-title {
   color: rgba(0, 0, 0, 0.85);
@@ -18202,7 +18215,7 @@ a.ant-notification-notice-close:focus {
   background-color: #e8e8e8;
 }
 .ant-steps-item-process .ant-steps-item-icon {
-  background: #48bcbc;
+  background: #f0aa54;
 }
 .ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
   color: #fff;
@@ -18211,14 +18224,14 @@ a.ant-notification-notice-close:focus {
   font-weight: 500;
 }
 .ant-steps-item-finish .ant-steps-item-icon {
-  border-color: #48bcbc;
+  border-color: #f0aa54;
   background-color: #fff;
 }
 .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
-  color: #48bcbc;
+  color: #f0aa54;
 }
 .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon .ant-steps-icon-dot {
-  background: #48bcbc;
+  background: #f0aa54;
 }
 .ant-steps-item-finish > .ant-steps-item-content > .ant-steps-item-title {
   color: #8b8b8b;
@@ -18288,7 +18301,7 @@ a.ant-notification-notice-close:focus {
   height: 32px;
 }
 .ant-steps-item-custom.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
-  color: #48bcbc;
+  color: #f0aa54;
 }
 .ant-steps-small.ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item {
   margin-right: 12px;

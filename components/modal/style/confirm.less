@@ -13,8 +13,8 @@
 
   .@{ant-prefix}-modal-body {
     padding: 32px 32px 24px;
-    background: #4ebaaa; /*changed noah*/
-    border-radius: 5px; /* changed noah*/
+    background: @primary-color;  // Changed by: Noah
+    border-radius: @border-radius-base; // Changed by: Noah
   }
 
   &-body-wrapper {
@@ -23,7 +23,7 @@
 
   &-body {
     .@{confirm-prefix-cls}-title {
-      color: @heading-color-dark; /* changed noah */
+      color: @heading-color-dark; // Changed by: Noah
       font-weight: 500;
       font-size: @font-size-lg;
       line-height: 22px;
@@ -52,11 +52,11 @@
     float: right;
 
     button {
-        border-color: @text-color-dark;/*added noah*/
+        border-color: @text-color-dark; // Added by:Noah
     }
 
     button + button {
-      border-color: @text-color-dark;/*added noah*/
+      border-color: @text-color-dark;   // Added by:Noah
       margin-left: 8px;
       margin-bottom: 0;
     }

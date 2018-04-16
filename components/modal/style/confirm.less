@@ -53,10 +53,12 @@
 
     button {
         border-color: @text-color-dark; // Added by:Noah
+        color: @primary-color; // Added by: Noah
     }
 
     button + button {
       border-color: @text-color-dark;   // Added by:Noah
+      color: @heading-color-dark; // Added by: Noah
       margin-left: 8px;
       margin-bottom: 0;
     }
@@ -68,11 +70,15 @@
 
   &-warning &-body > .@{iconfont-css-prefix},
   &-confirm &-body > .@{iconfont-css-prefix} {
-    color: @warning-color;
+    color: @body-background; // Changed by: Noah
   }
 
   &-info &-body > .@{iconfont-css-prefix} {
-    color: @info-color;
+    color: @body-background; // Changed by: Noah
+  }
+
+  &-info .@{confirm-prefix-cls}-btns > button { // Added by : Noah
+    color: @heading-color-dark;
   }
 
   &-success &-body > .@{iconfont-css-prefix} {

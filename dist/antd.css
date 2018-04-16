@@ -17208,9 +17208,11 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 }
 .ant-confirm .ant-confirm-btns button {
   border-color: rgba(255, 255, 255, 0.85);
+  color: #4ebaaa;
 }
 .ant-confirm .ant-confirm-btns button + button {
   border-color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   margin-left: 8px;
   margin-bottom: 0;
 }
@@ -17219,10 +17221,13 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 }
 .ant-confirm-warning .ant-confirm-body > .anticon,
 .ant-confirm-confirm .ant-confirm-body > .anticon {
-  color: #faad14;
+  color: #fff;
 }
 .ant-confirm-info .ant-confirm-body > .anticon {
-  color: #1890ff;
+  color: #fff;
+}
+.ant-confirm-info .ant-confirm-btns > button {
+  color: #ffffff;
 }
 .ant-confirm-success .ant-confirm-body > .anticon {
   color: #52c41a;

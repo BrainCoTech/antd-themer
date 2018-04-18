@@ -17217,7 +17217,10 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   margin-bottom: 0;
 }
 .ant-confirm-error .ant-confirm-body > .anticon {
-  color: #f5222d;
+  color: #fff;
+}
+.ant-confirm-error .ant-confirm-btns > button {
+  color: #ffffff;
 }
 .ant-confirm-warning .ant-confirm-body > .anticon,
 .ant-confirm-confirm .ant-confirm-body > .anticon {
@@ -17230,7 +17233,10 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   color: #ffffff;
 }
 .ant-confirm-success .ant-confirm-body > .anticon {
-  color: #52c41a;
+  color: #fff;
+}
+.ant-confirm-success .ant-confirm-btns > button {
+  color: #ffffff;
 }
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */

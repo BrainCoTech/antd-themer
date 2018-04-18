@@ -65,7 +65,10 @@
   }
 
   &-error &-body > .@{iconfont-css-prefix} {
-    color: @error-color;
+    color: @body-background;
+  }
+  &-error .@{confirm-prefix-cls}-btns > button { // Added by : Noah
+    color: @heading-color-dark;
   }
 
   &-warning &-body > .@{iconfont-css-prefix},
@@ -82,6 +85,10 @@
   }
 
   &-success &-body > .@{iconfont-css-prefix} {
-    color: @success-color;
+    color: @body-background;
   }
+  &-success .@{confirm-prefix-cls}-btns > button { // Added by : Noah
+    color: @heading-color-dark;
+  }
+
 }

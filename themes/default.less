@@ -8,7 +8,7 @@
 @primary-color          : #48bcbc; //changed by Dongsheng Sun   //#4ebaaa;CHANGED(Adis): @blue-6;
 @info-color             : @blue-6;
 @success-color          : @green-6;
-@processing-color       : #f0aa54;
+@processing-color       : #f0aa54; //changed by Dongsheng Sun //@processing-color       : @blue-6;
 @error-color            : @red-6;
 @highlight-color        : @red-6;
 @warning-color          : @gold-6;
@@ -166,6 +166,7 @@
 // Checkbox
 @checkbox-size          : 16px;
 @checkbox-color         : @primary-color;
+@checkbox-check-color   : #fff;
 
 // Radio
 @radio-size             : 16px;
@@ -214,18 +215,23 @@
 @grid-gutter-width      : 0;
 
 // Layout
-@layout-body-background      : #f0f2f5;
-@layout-header-background    : #001529;
-@layout-footer-background    : @layout-body-background;
-@layout-header-height        : 64px;
-@layout-header-padding       : 0 50px;
-@layout-footer-padding       : 24px 50px;
-@layout-sider-background     : @layout-header-background;
-@layout-trigger-height       : 48px;
-@layout-trigger-background   : #002140;
-@layout-trigger-color        : #fff;
-@layout-zero-trigger-width   : 36px;
-@layout-zero-trigger-height  : 42px;
+@layout-body-background         : #f0f2f5;
+@layout-header-background       : #001529;
+@layout-footer-background       : @layout-body-background;
+@layout-header-height           : 64px;
+@layout-header-padding          : 0 50px;
+@layout-footer-padding          : 24px 50px;
+@layout-sider-background        : @layout-header-background;
+@layout-trigger-height          : 48px;
+@layout-trigger-background      : #002140;
+@layout-trigger-color           : #fff;
+@layout-zero-trigger-width      : 36px;
+@layout-zero-trigger-height     : 42px;
+// Layout light theme
+@layout-sider-background-light  : #fff;
+@layout-trigger-background-light: #fff;
+@layout-trigger-color-light     : @text-color;
+
 
 // z-index list
 @zindex-affix           : 10;
@@ -273,6 +279,7 @@
 @input-addon-bg              : @background-color-light;
 @input-hover-border-color    : @primary-color;
 @input-disabled-bg           : @disabled-bg;
+@input-outline-offset        : 0 0;
 
 // Tooltip
 // ---
@@ -475,6 +482,13 @@
 @slider-dot-border-color-active:      tint(@primary-color, 50%);
 @slider-disabled-color:               @disabled-color;
 @slider-disabled-background-color:    @component-background;
+
+// Tree
+// ---
+@tree-title-height:                   24px;
+@tree-child-padding:                  18px;
+@tree-directory-selected-color:       #fff;
+@tree-directory-selected-bg:          @primary-color;
 
 // Collapse
 // ---

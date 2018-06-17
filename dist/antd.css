@@ -1,6 +1,6 @@
 /*!
  * 
- * antd v3.5.5
+ * antd v3.6.2
  * 
  * Copyright 2015-present, Alipay, Inc.
  * All rights reserved.
@@ -4970,13 +4970,13 @@ textarea.ant-input {
 }
 .ant-btn-group .ant-btn + .ant-btn,
 .ant-btn + .ant-btn-group,
-.ant-btn-group span + .ant-btn,
 .ant-btn-group .ant-btn + span,
+.ant-btn-group > span + span,
 .ant-btn-group + .ant-btn,
 .ant-btn-group + .ant-btn-group {
   margin-left: -1px;
 }
-.ant-btn-group .ant-btn-primary + .ant-btn:not(.ant-btn-primary) {
+.ant-btn-group .ant-btn-primary + .ant-btn:not(.ant-btn-primary):not([disabled]) {
   border-left-color: transparent;
 }
 .ant-btn-group .ant-btn:not(:first-child):not(:last-child) {
@@ -5870,7 +5870,7 @@ a.ant-btn-sm {
   color: #8b8b8b;
 }
 .ant-fullcalendar-fullscreen .ant-fullcalendar-content {
-  height: 90px;
+  height: 88px;
   overflow-y: auto;
   position: static;
   width: auto;
@@ -14720,7 +14720,6 @@ textarea.ant-input-number {
 }
 .ant-input-number-disabled .ant-input-number-input {
   cursor: not-allowed;
-  background-color: #dddddd;
 }
 .ant-input-number-disabled .ant-input-number-handler-wrap {
   display: none;
@@ -14733,8 +14732,7 @@ textarea.ant-input-number {
   height: 30px;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
-  color: #48bcbc;
-  background-color: #fff;
+  background-color: transparent;
   border: 0;
   border-radius: 4px;
   padding: 0 11px;
@@ -14749,16 +14747,6 @@ textarea.ant-input-number {
 }
 .ant-input-number-input::-webkit-input-placeholder {
   color: #bfbfbf;
-}
-.ant-input-number-input[disabled] {
-  background-color: #dddddd;
-  opacity: 1;
-  cursor: not-allowed;
-  color: #8b8b8b;
-}
-.ant-input-number-input[disabled]:hover {
-  border-color: #e6d8d8;
-  border-right-width: 1px !important;
 }
 .ant-input-number-lg {
   padding: 0;
@@ -14778,7 +14766,7 @@ textarea.ant-input-number {
   border-left: 1px solid #d9d9d9;
   width: 22px;
   height: 100%;
-  background: #fff;
+  background: transparent;
   position: absolute;
   top: 0;
   right: 0;
@@ -14949,6 +14937,13 @@ textarea.ant-input-number {
 }
 .ant-layout-sider-zero-width-trigger:hover {
   background: #192c3e;
+}
+.ant-layout-sider-light {
+  background: #fff;
+}
+.ant-layout-sider-light > .ant-layout-sider-trigger {
+  color: #8b8b8b;
+  background: #fff;
 }
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
@@ -15354,7 +15349,6 @@ textarea.ant-input-number {
   filter: blur(0.5px);
   /* autoprefixer: off */
   filter: progid\:DXImageTransform\.Microsoft\.Blur(PixelRadius\=1, MakeShadow\=false);
-  -webkit-transform: translateZ(0);
 }
 .ant-spin-blur:after {
   content: '';
@@ -15375,6 +15369,7 @@ textarea.ant-input-number {
 .ant-spin-dot {
   position: relative;
   display: inline-block;
+  font-size: 20px;
   width: 20px;
   height: 20px;
 }
@@ -15425,6 +15420,7 @@ textarea.ant-input-number {
           animation: antRotate 1.2s infinite linear;
 }
 .ant-spin-sm .ant-spin-dot {
+  font-size: 14px;
   width: 14px;
   height: 14px;
 }
@@ -15433,6 +15429,7 @@ textarea.ant-input-number {
   height: 6px;
 }
 .ant-spin-lg .ant-spin-dot {
+  font-size: 32px;
   width: 32px;
   height: 32px;
 }
@@ -17119,7 +17116,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-modal-open {
   overflow: hidden;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .ant-modal {
     width: auto !important;
     margin: 10px;
@@ -17553,7 +17550,7 @@ a.ant-notification-notice-close:focus {
 .ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow,
 .ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow,
 .ant-popover-placement-topRight > .ant-popover-content > .ant-popover-arrow {
-  bottom: 5px;
+  bottom: 5.5px;
   -webkit-box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
           box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
 }
@@ -19343,6 +19340,13 @@ tr.ant-table-expanded-row:hover {
 .ant-table-small.ant-table-bordered .ant-table-thead > tr > th:last-child,
 .ant-table-small.ant-table-bordered .ant-table-tbody > tr > td:last-child {
   border-right: none;
+}
+.ant-table-small.ant-table-bordered .ant-table-fixed-left .ant-table-thead > tr > th:last-child,
+.ant-table-small.ant-table-bordered .ant-table-fixed-left .ant-table-tbody > tr > td:last-child {
+  border-right: 1px solid #e8e8e8;
+}
+.ant-table-small.ant-table-bordered .ant-table-fixed-right {
+  border-right: 1px solid #e8e8e8;
 }
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */

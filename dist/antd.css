@@ -3390,8 +3390,8 @@ mark {
           box-sizing: border-box;
   display: block;
   background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid #d9d9d9;
+  border-radius: 0;
+  border: 1px solid #48bcbc;
   border-top-width: 1.02px;
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -3797,7 +3797,7 @@ mark {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
-  max-height: 250px;
+  max-height: 190px;
   overflow: auto;
 }
 .ant-select-dropdown-menu-item-group-list {
@@ -3817,10 +3817,11 @@ mark {
 .ant-select-dropdown-menu-item {
   position: relative;
   display: block;
-  padding: 5px 12px;
+  height: 40px;
+  padding: 10px 12px;
   line-height: 22px;
   font-weight: normal;
-  color: #8b8b8b;
+  color: #333333;
   white-space: nowrap;
   cursor: pointer;
   overflow: hidden;
@@ -3829,7 +3830,8 @@ mark {
   transition: background 0.3s ease;
 }
 .ant-select-dropdown-menu-item:hover {
-  background-color: #edfcfa;
+  background-color: #48bcbc;
+  color: #fff;
 }
 .ant-select-dropdown-menu-item:first-child {
   border-radius: 4px 4px 0 0;
@@ -3848,9 +3850,9 @@ mark {
 }
 .ant-select-dropdown-menu-item-selected,
 .ant-select-dropdown-menu-item-selected:hover {
-  background-color: #fefefe;
+  background-color: #48bcbc;
   font-weight: 600;
-  color: #8b8b8b;
+  color: #fff;
 }
 .ant-select-dropdown-menu-item-active {
   background-color: #edfcfa;
@@ -13607,7 +13609,7 @@ textarea.ant-time-picker-input {
   clear: both;
   font-size: 14px;
   font-weight: normal;
-  color: #8b8b8b;
+  color: #333333;
   white-space: nowrap;
   cursor: pointer;
   -webkit-transition: all .3s;
@@ -13636,7 +13638,8 @@ textarea.ant-time-picker-input {
 }
 .ant-dropdown-menu-item:hover,
 .ant-dropdown-menu-submenu-title:hover {
-  background-color: #edfcfa;
+  background-color: #48bcbc;
+  color: #fff;
 }
 .ant-dropdown-menu-item-disabled,
 .ant-dropdown-menu-submenu-title-disabled {

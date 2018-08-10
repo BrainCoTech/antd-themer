@@ -82,8 +82,8 @@
     display: block;
 
     background-color: @component-background;
-    border-radius: @border-radius-base;
-    border: @border-width-base @border-style-base @border-color-base;
+    border-radius: 0; // @border-radius-base; Chanegd Noah
+    border: @border-width-base @border-style-base @primary-color;// @border-color-base; Changed NOah
     // strange align fix for chrome but works
     // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
     border-top-width: @border-width-base + 0.02px;
@@ -461,7 +461,7 @@
     margin-bottom: 0;
     padding-left: 0; // Override default ul/ol
     list-style: none;
-    max-height: 250px;
+    max-height: 190px; //250px; Changed Noah
     overflow: auto;
     
     &-item-group-list {
@@ -484,18 +484,20 @@
     &-item {
       position: relative;
       display: block;
-      padding: 5px @control-padding-horizontal;
+      height: 40px; // Added noah
+      padding: 10px @control-padding-horizontal; //5px @control-padding-horizontal; Changed Noah
       line-height: 22px;
       font-weight: normal;
-      color: @text-color;
+      color: @text-color-black; //@text-color; // Changed Noah
       white-space: nowrap;
       cursor: pointer;
       overflow: hidden;
       text-overflow: ellipsis;
       transition: background 0.3s ease;
-
+      
       &:hover {
-        background-color: @item-hover-bg;
+        background-color: @primary-color; //@item-hover-bg; Changed Noah;
+        color: @text-color-white; //ADDED Noah;
       }
 
       &:first-child {
@@ -520,9 +522,9 @@
       &-selected {
         &,
         &:hover {
-          background-color: @background-color-light;
+          background-color: @primary-color; // @background-color-light; CHanged Noah
           font-weight: 600;
-          color: @text-color;
+          color: @text-color-white; //@text-color; Changed Noah
         }
       }
 

@@ -76,13 +76,13 @@
   &-selection {
     outline: none;
     user-select: none;
-    color: @selected-text-color; //ADDED(Noah); New Added
+    color: @selected-text-color; //ADDED(Noah)
 
     box-sizing: border-box;
     display: block;
 
     background-color: @component-background;
-    border-radius: 0; // @border-radius-base; Chanegd Noah
+    border-radius: 0; // @border-radius-base; //CHANGED(Noah)
     border: @border-width-base @border-style-base @primary-color;// @border-color-base; Changed NOah
     // strange align fix for chrome but works
     // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
@@ -461,7 +461,7 @@
     margin-bottom: 0;
     padding-left: 0; // Override default ul/ol
     list-style: none;
-    max-height: 190px; //250px; Changed Noah
+    max-height: 190px; //250px; //CHANGED(Noah)
     overflow: auto;
     
     &-item-group-list {
@@ -484,11 +484,11 @@
     &-item {
       position: relative;
       display: block;
-      height: 40px; // Added noah
+      height: 40px; //CHANGED(Noah)
       padding: 10px @control-padding-horizontal; //5px @control-padding-horizontal; Changed Noah
       line-height: 22px;
       font-weight: normal;
-      color: @text-color-black; //@text-color; // Changed Noah
+      color: @text-color-black; //@text-color; //CHANGED(Noah)
       white-space: nowrap;
       cursor: pointer;
       overflow: hidden;
@@ -496,8 +496,8 @@
       transition: background 0.3s ease;
       
       &:hover {
-        background-color: @primary-color; //@item-hover-bg; Changed Noah;
-        color: @text-color-white; //ADDED Noah;
+        background-color: @primary-color; //@item-hover-bg; //CHANGED(Noah)
+        color: @text-color-white; //ADDED(Noah)
       }
 
       &:first-child {
@@ -522,9 +522,9 @@
       &-selected {
         &,
         &:hover {
-          background-color: @primary-color; // @background-color-light; CHanged Noah
+          background-color: @primary-color; // @background-color-light; //CHANGED(Noah)
           font-weight: 600;
-          color: @text-color-white; //@text-color; Changed Noah
+          color: @text-color-white; //@text-color; //CHANGED(Noah)
         }
       }
 

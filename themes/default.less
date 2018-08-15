@@ -5,10 +5,10 @@
 @ant-prefix             : ant;
 
 // -------- Colors -----------
-@primary-color          : #48bcbc; //changed by Dongsheng Sun   //#4ebaaa;CHANGED(Adis): @blue-6;
+@primary-color          : #48bcbc; //CHANGED(Adis)   //#4ebaaa: @blue-6;
 @info-color             : @blue-6;
 @success-color          : @green-6;
-@processing-color       : #f0aa54; //changed by Dongsheng Sun //@processing-color       : @blue-6;
+@processing-color       : #f0aa54; //CHANGED(Noah) //@processing-color       : @blue-6;
 @error-color            : @red-6;
 @highlight-color        : @red-6;
 @warning-color          : @gold-6;
@@ -41,9 +41,9 @@
 @text-color             : #8b8b8b;//CHANGED(Adis):fade(#000, 65%);
 @text-color-lightblue   : @primary-color; //CHANGED(Noah);
 @text-color-secondary   : #bcbcbc;//CHANGED(Adis):fade(#000, 45%);
-@text-color-black        : #333333; // ADDed (NOAH)
-@text-color-white       : #fff; // ADDED Noah
-@heading-color-grey     : @text-color-secondary; //ADDED Noah
+@text-color-black        : #333333; // ADDED(Noah)
+@text-color-white       : #fff; // ADDED(Noah)
+@heading-color-grey     : @text-color-secondary; //ADDED(Noah)
 @heading-color-dark     : fade(#fff, 100%);
 @text-color-dark        : fade(#fff,85%);
 @text-color-secondary-dark: fade(#fff, 65%);
@@ -266,7 +266,7 @@
 @input-height-base           : 32px;
 @input-height-lg             : 40px;
 @input-height-sm             : 24px;
-@input-border-radius         : 5px; //CHANGED Noah ; new added
+@input-border-radius         : 5px; //CHANGED(Noah) ; new added
 @input-padding-horizontal    : @control-padding-horizontal - 1px;
 @input-padding-horizontal-base: @input-padding-horizontal;
 @input-padding-horizontal-sm : @control-padding-horizontal-sm - 1px;
@@ -275,7 +275,7 @@
 @input-padding-vertical-sm   : 1px;
 @input-padding-vertical-lg   : 6px;
 @input-placeholder-color     : hsv(0, 0, 75%);
-@input-color                 : @text-color-lightblue; //CHANGED Noah: text-color
+@input-color                 : @text-color-lightblue; //CHANGED(Noah): text-color
 @input-border-color          : @border-color-base;
 @input-bg                    : #fff;
 @input-addon-bg              : @background-color-light;
@@ -352,8 +352,8 @@
 
 // Table
 // --
-@table-header-bg: transparent; //CHANGED Noah: @background-color-light
-@table-row-bg: @background-color-light; //CHANGED Noah; @background-color-base
+@table-header-bg: transparent; //CHANGED(Noah): @background-color-light
+@table-row-bg: @background-color-light; //CHANGED(Noah); @background-color-base
 @table-header-sort-bg: @background-color-base;
 @table-row-hover-bg: @primary-1;
 @table-selected-row-bg: #fafafa;
@@ -363,8 +363,8 @@
 
 // Tag
 // --
-@tag-default-bg: @background-color-blue; // CHANGED NOAH; background color of tags
-@tag-default-color: @text-color-lightblue; // CHANGED NOAH; text color of tags
+@tag-default-bg: @background-color-blue; //CHANGED(Noah); background color of tags
+@tag-default-color: @text-color-lightblue; //CHANGED(Noah); text color of tags
 @tag-font-size: @font-size-sm;
 
 // TimePicker
@@ -501,6 +501,6 @@
 
 // Select
 // ---
-@selected-text-color: @text-color-lightblue; // Changed Noah
+@selected-text-color: @text-color-lightblue; //CHANGED(Noah)
 
 @import "./default.deperated.less";

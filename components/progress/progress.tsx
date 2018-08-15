@@ -5,7 +5,7 @@ import { Circle } from 'rc-progress';
 import classNames from 'classnames';
 
 const statusColorMap = {
-  normal: '#f0aa54', // Changed(Noah)
+  normal: '#f0aa54', //CHANGED(Noah)
   exception: '#ff5500',
   success: '#87d068',
 };

@@ -69,7 +69,7 @@ export interface CarouselProps {
 export default class Carousel extends React.Component<CarouselProps, {}> {
   static defaultProps = {
     dots: true, 
-    arrows: true, // CHANGED BY DONGSHENG SUN
+    arrows: true, //CHANGED(Noah)
     prefixCls: 'ant-carousel',
     draggable: false,
   };

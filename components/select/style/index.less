@@ -38,6 +38,7 @@
   .reset-component;
   display: inline-block;
   position: relative;
+  outline: 0;
 
   ul,
   ol {
@@ -69,7 +70,7 @@
 
     &:before {
       content: '\e61d';
-      transition: transform 0.2s ease;
+      transition: transform .3s;
     }
   }
 
@@ -83,7 +84,7 @@
 
     background-color: @component-background;
     border-radius: 0; // @border-radius-base; //CHANGED(Noah)
-    border: @border-width-base @border-style-base @primary-color;// @border-color-base; Changed NOah
+    border: @border-width-base @border-style-base @primary-color;// @border-color-base; CHANGED(Noah)
     // strange align fix for chrome but works
     // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
     border-top-width: @border-width-base + 0.02px;
@@ -257,7 +258,7 @@
 
   &-search__field__mirror {
     position: absolute;
-    top: 0;
+    top: -9999px;
     left: -9999px;
     white-space: pre;
     pointer-events: none;
@@ -375,7 +376,7 @@
       top: @input-height-base / 2;
     }
   }
-  
+
   &-allow-clear &-selection--single &-selection-selected-value {
     padding-right: 16px;
   }
@@ -463,7 +464,7 @@
     list-style: none;
     max-height: 190px; //250px; //CHANGED(Noah)
     overflow: auto;
-    
+
     &-item-group-list {
       margin: 0;
       padding: 0;
@@ -481,11 +482,16 @@
       font-size: @font-size-sm;
     }
 
+    &-item-group-list &-item:first-child:not(:last-child),
+    &-item-group:not(:last-child) &-item-group-list &-item:last-child {
+      border-radius: 0;
+    }
+
     &-item {
       position: relative;
       display: block;
-      height: 40px; //CHANGED(Noah)
-      padding: 10px @control-padding-horizontal; //5px @control-padding-horizontal; Changed Noah
+      height: 40px; //ADDED(Noah)
+      padding: 10px @control-padding-horizontal; //5px @control-padding-horizontal; //CHANGED(Noah)
       line-height: 22px;
       font-weight: normal;
       color: @text-color-black; //@text-color; //CHANGED(Noah)
@@ -494,7 +500,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       transition: background 0.3s ease;
-      
+
       &:hover {
         background-color: @primary-color; //@item-hover-bg; //CHANGED(Noah)
         color: @text-color-white; //ADDED(Noah)
@@ -523,7 +529,6 @@
         &,
         &:hover {
           background-color: @primary-color; // @background-color-light; //CHANGED(Noah)
-          font-weight: 600;
           color: @text-color-white; //@text-color; //CHANGED(Noah)
         }
       }

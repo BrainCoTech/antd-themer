@@ -5,10 +5,10 @@
 @ant-prefix             : ant;
 
 // -------- Colors -----------
-@primary-color          : #48bcbc; //CHANGED(Adis)   //#4ebaaa: @blue-6;
+@primary-color          : #48bcbc; //CHANGED(Adis): @blue-6;
 @info-color             : @blue-6;
 @success-color          : @green-6;
-@processing-color       : #f0aa54; //CHANGED(Noah) //@processing-color       : @blue-6;
+@processing-color       : #f0aa54; //CHANGED(Noah) @blue-6;
 @error-color            : @red-6;
 @highlight-color        : @red-6;
 @warning-color          : @gold-6;
@@ -34,9 +34,9 @@
 @body-background        : #fff;
 // Base background color for most components
 @component-background   : #fff;
-@font-family-no-number  : "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family            : "Monospaced Number", @font-family-no-number;
-@code-family            : Consolas, Menlo, Courier, monospace;
+@font-family  : "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+@code-family            : "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 @heading-color          : fade(#000, 85%);
 @text-color             : #8b8b8b;//CHANGED(Adis):fade(#000, 65%);
 @text-color-lightblue   : @primary-color; //CHANGED(Noah);
@@ -45,7 +45,7 @@
 @text-color-white       : #fff; // ADDED(Noah)
 @heading-color-grey     : @text-color-secondary; //ADDED(Noah)
 @heading-color-dark     : fade(#fff, 100%);
-@text-color-dark        : fade(#fff,85%);
+@text-color-dark        : fade(#fff, 85%);
 @text-color-secondary-dark: fade(#fff, 65%);
 @font-size-base         : 14px;
 @font-size-lg           : @font-size-base + 2px;
@@ -72,8 +72,7 @@
 
 // ICONFONT
 @iconfont-css-prefix    : anticon;
-//@icon-url               : "../fonts/anticon/anticon";
-// CHANGED(Adis):
+//@icon-url               : "../fonts/anticon/anticon";// CHANGED(Adis):
 @icon-url               : "https://at.alicdn.com/t/font_148784_v4ggb6wrjmkotj4i";
 
 // LINK
@@ -120,13 +119,12 @@
 // Shadow
 @shadow-color           : rgba(216, 216, 216, 0.5);//CHANGED(Adis): rgba(0, 0, 0, .15);
 @box-shadow-base        : @shadow-1-down;
-@box-shadow-popconfirm  : @shadow-popconfirm;
+@shadow-popconfirm      : 0 2px 18px 2px @shadow-color; //ADDED(Noah)
 @shadow-1-up            : 0 2px 8px @shadow-color;
 @shadow-1-down          : 0 2px 8px @shadow-color;
 @shadow-1-left          : -2px 0 8px @shadow-color;
 @shadow-1-right         : 2px 0 8px @shadow-color;
 @shadow-2               : 0 4px 12px @shadow-color;
-@shadow-popconfirm      : 0 2px 18px 2px @shadow-color; //CHANGED(Noah), 
 
 // Buttons
 @btn-font-weight        : 400;
@@ -150,7 +148,7 @@
 @btn-disable-border     : @border-color-base;
 
 @btn-padding-base       : 0 @padding-md - 1px;
-@btn-font-size-lg       : @font-size-base;
+@btn-font-size-lg       : @font-size-lg;
 @btn-font-size-sm       : @font-size-base;
 @btn-padding-lg         : 0 @padding-ex-lg - 1px;//CHANGED(Adis):@btn-padding-base;
 @btn-padding-sm         : 0 @padding-xs - 1px;
@@ -234,7 +232,6 @@
 @layout-trigger-background-light: #fff;
 @layout-trigger-color-light     : @text-color;
 
-
 // z-index list
 @zindex-affix           : 10;
 @zindex-back-top        : 10;
@@ -266,7 +263,7 @@
 @input-height-base           : 32px;
 @input-height-lg             : 40px;
 @input-height-sm             : 24px;
-@input-border-radius         : 5px; //CHANGED(Noah) ; new added
+@input-border-radius         : 5px; //ADDED(Noah)
 @input-padding-horizontal    : @control-padding-horizontal - 1px;
 @input-padding-horizontal-base: @input-padding-horizontal;
 @input-padding-horizontal-sm : @control-padding-horizontal-sm - 1px;
@@ -275,7 +272,7 @@
 @input-padding-vertical-sm   : 1px;
 @input-padding-vertical-lg   : 6px;
 @input-placeholder-color     : hsv(0, 0, 75%);
-@input-color                 : @text-color-lightblue; //CHANGED(Noah): text-color
+@input-color                 : @text-color-lightblue; //CHANGED(Noah): @text-color
 @input-border-color          : @border-color-base;
 @input-bg                    : #fff;
 @input-addon-bg              : @background-color-light;
@@ -301,9 +298,9 @@
 // Popover
 // ---
 //** Popover body background color
-@popover-bg: @primary-color;
+@popover-bg: #fff;
 //** Popover text color
-@popover-color: #fff;
+@popover-color: @text-color;
 //** Popover maximum width
 @popover-min-width: 177px;
 //** Popover arrow width
@@ -327,7 +324,6 @@
 
 // Menu
 // ---
-
 @menu-inline-toplevel-item-height: 40px;
 @menu-item-height: 40px;
 @menu-collapsed-width: 60px;// CHANGED(Adis): 80px;
@@ -353,7 +349,7 @@
 // Table
 // --
 @table-header-bg: transparent; //CHANGED(Noah): @background-color-light
-@table-row-bg: @background-color-light; //CHANGED(Noah); @background-color-base
+@table-row-bg: @background-color-light; //ADDED(Noah); @background-color-base
 @table-header-sort-bg: @background-color-base;
 @table-row-hover-bg: @primary-1;
 @table-selected-row-bg: #fafafa;
@@ -363,8 +359,8 @@
 
 // Tag
 // --
-@tag-default-bg: @background-color-blue; //CHANGED(Noah); background color of tags
-@tag-default-color: @text-color-lightblue; //CHANGED(Noah); text color of tags
+@tag-default-bg: @background-color-blue; //CHANGED(Noah);  @background-color-light
+@tag-default-color: @text-color-lightblue; //CHANGED(Noah);  @text-color
 @tag-font-size: @font-size-sm;
 
 // TimePicker
@@ -395,7 +391,7 @@
 // Card
 // ---
 @card-head-color: @heading-color;
-@card-head-background: @component-background;
+@card-head-background: transparent;
 @card-head-padding: 16px;
 @card-inner-head-padding: 12px;
 @card-padding-base: 24px;
@@ -409,7 +405,7 @@
 @tabs-card-height: 40px;
 @tabs-card-active-color: @primary-color;
 @tabs-title-font-size: @font-size-base;
-@tabs-title-font-size-lg: @font-size-sm;
+@tabs-title-font-size-lg: @font-size-lg;
 @tabs-title-font-size-sm: @font-size-base;
 @tabs-ink-bar-color: @primary-color;
 @tabs-bar-margin: 0 0 16px 0;
@@ -421,8 +417,6 @@
 @tabs-highlight-color: @primary-color;
 @tabs-hover-color: @primary-5;
 @tabs-active-color: @primary-7;
-
-
 
 // BackTop
 // ---
@@ -499,8 +493,14 @@
 @collapse-content-padding:            @padding-md;
 @collapse-content-bg:                 @component-background;
 
-// Select
+// Message
 // ---
-@selected-text-color: @text-color-lightblue; //CHANGED(Noah)
+@message-notice-content-padding:      10px 16px;
+
+// Motion
+// ---
+@wave-animation-width: 6px;
+
+@selected-text-color: @text-color-lightblue; //ADDED(Noah)
 
 @import "./default.deperated.less";

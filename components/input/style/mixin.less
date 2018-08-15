@@ -7,6 +7,7 @@
 .input-lg() {
   padding: @input-padding-vertical-lg @input-padding-horizontal-lg;
   height: @input-height-lg;
+  font-size: @font-size-lg;
 }
 
 .input-sm() {
@@ -52,7 +53,7 @@
   background-color: @input-bg;
   background-image: none;
   border: @border-width-base @border-style-base @input-border-color;
-  border-radius: @input-border-radius; //CHANGED(Noah)
+  border-radius: @input-border-radius; //CHANGED(Noah) @border-radius-base;
   .placeholder(); // Reset placeholder
   transition: all .3s;
 
@@ -136,6 +137,11 @@
     margin-bottom: 0;
     &:focus {
       z-index: 1; // Fix https://gw.alipayobjects.com/zos/rmsportal/DHNpoqfMXSfrSnlZvhsJ.png
+      border-right-width: 1px;
+    }
+    &:hover {
+      z-index: 1;
+      border-right-width: 1px;
     }
   }
 
@@ -148,7 +154,7 @@
     text-align: center;
     background-color: @input-addon-bg;
     border: @border-width-base @border-style-base @input-border-color;
-    border-radius: @input-border-radius; //CHANGED(Noah)
+    border-radius: @input-border-radius; //CHANGED(Noah) @border-radius-base;
     position: relative;
     transition: all .3s;
 
@@ -268,7 +274,6 @@
     // Undo float for .ant-input-group .ant-input
     .@{inputClass} {
       float: none;
-      z-index: auto;
     }
 
     // reset border for Select, DatePicker, AutoComplete, Cascader, Mention, TimePicker
@@ -289,8 +294,8 @@
     & > .@{ant-prefix}-cascader-picker:first-child .@{ant-prefix}-input,
     & > .@{ant-prefix}-mention-wrapper:first-child .@{ant-prefix}-mention-editor,
     & > .@{ant-prefix}-time-picker:first-child .@{ant-prefix}-time-picker-input {
-      border-top-left-radius: @input-border-radius; //CHANGED(Noah)
-      border-bottom-left-radius: @input-border-radius; //CHANGED(Noah)
+      border-top-left-radius: @input-border-radius; //CHANGED(Noah) @border-radius-base;
+      border-bottom-left-radius: @input-border-radius; //CHANGED(Noah) @border-radius-base;
     }
 
     & > *:last-child,
@@ -300,8 +305,8 @@
     & > .@{ant-prefix}-cascader-picker:last-child .@{ant-prefix}-input,
     & > .@{ant-prefix}-mention-wrapper:last-child .@{ant-prefix}-mention-editor,
     & > .@{ant-prefix}-time-picker:last-child .@{ant-prefix}-time-picker-input {
-      border-top-right-radius: @input-border-radius; //CHANGED(Noah)
-      border-bottom-right-radius: @input-border-radius; //CHANGED(Noah)
+      border-top-right-radius: @input-border-radius; //CHANGED(Noah) @border-radius-base;
+      border-bottom-right-radius: @input-border-radius; //CHANGED(Noah) @border-radius-base;
       border-right-width: 1px;
     }
   }
@@ -327,6 +332,9 @@
     transform: translateY(-50%);
     line-height: 0;
     color: @input-color;
+    :not(.anticon) {
+      line-height: @line-height-base;
+    }
   }
 
   .@{inputClass}-prefix {

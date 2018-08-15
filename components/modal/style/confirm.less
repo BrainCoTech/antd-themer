@@ -13,8 +13,8 @@
 
   .@{ant-prefix}-modal-body {
     padding: 32px 32px 24px;
-    background: @primary-color;  //CHANGED(Noah)
-    border-radius: @border-radius-base; //CHANGED(Noah)
+    background: @primary-color;  //ADDED(Noah)
+    border-radius: @border-radius-base; //ADDED(Noah)
   }
 
   &-body-wrapper {
@@ -23,14 +23,14 @@
 
   &-body {
     .@{confirm-prefix-cls}-title {
-      color: @heading-color-dark; //CHANGED(Noah)
+      color: @heading-color-dark; //CHANGED(Noah) @heading-color
       font-weight: 500;
       font-size: @font-size-lg;
-      line-height: 22px;
+      line-height: 1.4;
       display: block;
       // create BFC to avoid
       // https://user-images.githubusercontent.com/507615/37702510-ba844e06-2d2d-11e8-9b67-8e19be57f445.png
-      overflow: auto;
+      overflow: hidden;
     }
 
     .@{confirm-prefix-cls}-content {
@@ -50,12 +50,10 @@
   .@{confirm-prefix-cls}-btns {
     margin-top: 24px;
     float: right;
-
     button {
         border-color: @text-color-dark; //ADDED(Noah)
         color: @primary-color; //ADDED(Noah)
     }
-
     button + button {
       border-color: @text-color-dark;   //ADDED(Noah)
       color: @heading-color-dark; //ADDED(Noah)
@@ -65,7 +63,7 @@
   }
 
   &-error &-body > .@{iconfont-css-prefix} {
-    color: @body-background;
+    color: @error-color;
   }
   &-error .@{confirm-prefix-cls}-btns > button { //ADDED(Noah)
     color: @heading-color-dark;
@@ -73,22 +71,20 @@
 
   &-warning &-body > .@{iconfont-css-prefix},
   &-confirm &-body > .@{iconfont-css-prefix} {
-    color: @body-background; //CHANGED(Noah)
+    color: @body-background; //CHANGED(Noah) @warning-color;
   }
 
   &-info &-body > .@{iconfont-css-prefix} {
-    color: @body-background; //CHANGED(Noah)
+    color: @body-background; //CHANGED(Noah) @info-color;
   }
-
   &-info .@{confirm-prefix-cls}-btns > button { //ADDED(Noah)
     color: @heading-color-dark;
   }
 
   &-success &-body > .@{iconfont-css-prefix} {
-    color: @body-background;
+    color: @success-color;
   }
   &-success .@{confirm-prefix-cls}-btns > button { //ADDED(Noah)
     color: @heading-color-dark;
   }
-
 }

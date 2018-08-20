@@ -17635,7 +17635,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 }
 .ant-confirm .ant-modal-body {
   padding: 32px 32px 24px;
-  background: #48bcbc;
+  background: #fff;
   border-radius: 4px;
 }
 .ant-confirm-body-wrapper {
@@ -17650,7 +17650,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   clear: both;
 }
 .ant-confirm-body .ant-confirm-title {
-  color: #ffffff;
+  color: #666666;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.4;
@@ -17660,7 +17660,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 .ant-confirm-body .ant-confirm-content {
   margin-left: 38px;
   font-size: 14px;
-  color: #fff;
+  color: #666666;
   margin-top: 8px;
 }
 .ant-confirm-body > .anticon {
@@ -17673,14 +17673,20 @@ textarea.ant-mention-wrapper .ant-mention-editor {
   float: right;
 }
 .ant-confirm .ant-confirm-btns button {
-  border-color: rgba(255, 255, 255, 0.85);
-  color: #48bcbc;
+  border: solid 1px #d9d9d9;
+  color: #666666;
+  border-radius: 16px;
+  height: 32px;
+  width: 96px;
 }
 .ant-confirm .ant-confirm-btns button + button {
-  border-color: rgba(255, 255, 255, 0.85);
-  color: #ffffff;
-  margin-left: 8px;
+  color: #fff;
+  border: solid 1px #d9d9d9;
+  border-radius: 16px;
+  margin-left: 10px;
   margin-bottom: 0;
+  height: 32px;
+  width: 96px;
 }
 .ant-confirm-error .ant-confirm-body > .anticon {
   color: #f5222d;
@@ -17690,7 +17696,7 @@ textarea.ant-mention-wrapper .ant-mention-editor {
 }
 .ant-confirm-warning .ant-confirm-body > .anticon,
 .ant-confirm-confirm .ant-confirm-body > .anticon {
-  color: #fff;
+  color: #f0aa54;
 }
 .ant-confirm-info .ant-confirm-body > .anticon {
   color: #fff;

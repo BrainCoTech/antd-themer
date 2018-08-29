@@ -3404,12 +3404,12 @@ mark {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: #48bcbc;
+  color: #333333;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
   background-color: #fff;
-  border-radius: 0;
+  border-radius: 4px;
   border: 1px solid #48bcbc;
   border-top-width: 1.02px;
   -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -3879,7 +3879,8 @@ mark {
   color: #fff;
 }
 .ant-select-dropdown-menu-item-active {
-  background-color: #edfcfa;
+  color: #fff;
+  background-color: #48bcbc;
 }
 .ant-select-dropdown-menu-item-divider {
   height: 1px;
@@ -3950,7 +3951,7 @@ mark {
   height: 32px;
   font-size: 14px;
   line-height: 1.5;
-  color: #48bcbc;
+  color: #333333;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
@@ -4071,7 +4072,7 @@ textarea.ant-input {
   font-size: 14px;
   font-weight: normal;
   line-height: 1;
-  color: #48bcbc;
+  color: #333333;
   text-align: center;
   background-color: #fefefe;
   border: 1px solid #d9d9d9;
@@ -4245,7 +4246,7 @@ textarea.ant-input {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   line-height: 0;
-  color: #48bcbc;
+  color: #333333;
 }
 .ant-input-affix-wrapper .ant-input-prefix :not(.anticon),
 .ant-input-affix-wrapper .ant-input-suffix :not(.anticon) {
@@ -7359,6 +7360,7 @@ span.ant-radio + * {
   overflow: hidden;
   width: 100%;
   padding: 0 12px;
+  color: #333333;
 }
 .ant-cascader-picker-clear {
   opacity: 0;
@@ -7477,9 +7479,11 @@ span.ant-radio + * {
   white-space: nowrap;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  color: #333333;
 }
 .ant-cascader-menu-item:hover {
-  background: #edfcfa;
+  background: #48bcbc;
+  color: #fff;
 }
 .ant-cascader-menu-item-disabled {
   cursor: not-allowed;
@@ -7490,8 +7494,9 @@ span.ant-radio + * {
 }
 .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled),
 .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled):hover {
-  background: #f6f6f6;
-  font-weight: 600;
+  background: #48bcbc;
+  font-weight: 500;
+  color: #fff;
 }
 .ant-cascader-menu-item-expand {
   position: relative;
@@ -11861,7 +11866,7 @@ span.ant-radio + * {
   cursor: auto;
   outline: 0;
   height: 22px;
-  color: #48bcbc;
+  color: #333333;
   background: #fff;
 }
 .ant-calendar-input::-moz-placeholder {
@@ -12423,7 +12428,7 @@ span.ant-radio + * {
   height: 32px;
   font-size: 14px;
   line-height: 1.5;
-  color: #48bcbc;
+  color: #333333;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
@@ -13401,7 +13406,7 @@ li.ant-time-picker-panel-select-option-disabled:hover {
   height: 32px;
   font-size: 14px;
   line-height: 1.5;
-  color: #48bcbc;
+  color: #333333;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
@@ -14309,7 +14314,7 @@ textarea.ant-time-picker-input {
   padding-top: 15px;
   font-size: 14px;
   line-height: 1.5;
-  color: #48bcbc;
+  color: #333333;
 }
 .ant-form-item-required:before {
   display: inline-block;
@@ -15039,7 +15044,7 @@ form .ant-input-group-wrapper {
   height: 32px;
   font-size: 14px;
   line-height: 1.5;
-  color: #48bcbc;
+  color: #333333;
   background-color: #fff;
   background-image: none;
   border-radius: 5px;
@@ -16180,7 +16185,7 @@ textarea.ant-input-number {
   height: 32px;
   font-size: 14px;
   line-height: 1.5;
-  color: #48bcbc;
+  color: #333333;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
@@ -16368,7 +16373,7 @@ textarea.ant-pagination-options-quick-jumper input {
   width: 100%;
   height: 32px;
   font-size: 14px;
-  color: #48bcbc;
+  color: #333333;
   background-color: #fff;
   background-image: none;
   border: 1px solid #d9d9d9;
@@ -19051,7 +19056,7 @@ a.ant-notification-notice-close:focus {
   vertical-align: middle;
   border-radius: 100px;
   border: 1px solid transparent;
-  background-color: #8b8b8b;
+  background-color: #dadada;
   cursor: pointer;
   -webkit-transition: all 0.36s;
   transition: all 0.36s;

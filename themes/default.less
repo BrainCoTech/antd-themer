@@ -116,6 +116,7 @@
 @disabled-color         : #8b8b8b;//CHANGED(Adis):fade(#000, 25%);
 @disabled-bg            : #dddddd;//CHANGED(Adis):@background-color-base;
 @disabled-color-dark    : #bcbcbc;//CHANGED(Adis):fade(#fff, 35%);
+@disabled-color-lighter : #dadada;//ADDED(Noah)
 
 // Shadow
 @shadow-color           : rgba(216, 216, 216, 0.5);//CHANGED(Adis): rgba(0, 0, 0, .15);
@@ -273,7 +274,7 @@
 @input-padding-vertical-sm   : 1px;
 @input-padding-vertical-lg   : 6px;
 @input-placeholder-color     : hsv(0, 0, 75%);
-@input-color                 : @text-color-lightblue; //CHANGED(Noah): @text-color
+@input-color                 : @text-color-black; //Changed(Noah) @text-color-lightblue; //CHANGED(Noah): @text-color
 @input-border-color          : @border-color-base;
 @input-bg                    : #fff;
 @input-addon-bg              : @background-color-light;
@@ -502,6 +503,6 @@
 // ---
 @wave-animation-width: 6px;
 
-@selected-text-color: @text-color-lightblue; //ADDED(Noah)
+@selected-text-color: @text-color-black; //Changed(Noah) @text-color-lightblue; //ADDED(Noah)
 
 @import "./default.deperated.less";

@@ -110,7 +110,7 @@
   position: relative;
   display: inline-block;
   > .@{btnClassName},
-  > span > .@{btnClassName} { //MAY DELETE this line
+  > span > .@{btnClassName} {
     position: relative;
     line-height: @btn-height-base - 2px;
 
@@ -251,7 +251,7 @@
 
   .@{btnClassName} + .@{btnClassName},
   .@{btnClassName} + &,
-  span + .@{btnClassName},//MAY DELETE this line
+  span + .@{btnClassName},
   .@{btnClassName} + span,
   > span + span,
   & + .@{btnClassName},
@@ -271,10 +271,10 @@
   > span:first-child > .@{btnClassName} {
     margin-left: 0;
   }
-  > .@{btnClassName}:only-child {//MAY DELETE this group
+  > .@{btnClassName}:only-child {
     border-radius: @btn-border-radius-base;
   }
-  > span:only-child > .@{btnClassName} {//MAY DELETE this group
+  > span:only-child > .@{btnClassName} {
     border-radius: @btn-border-radius-base;
   }
 

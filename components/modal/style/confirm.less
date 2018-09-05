@@ -1,6 +1,7 @@
 @import "../../style/mixins/index";
 
 @confirm-prefix-cls: ~"@{ant-prefix}-confirm";
+@confirm-icon-size: 26px;
 
 .@{confirm-prefix-cls} {
   .@{ant-prefix}-modal-header {
@@ -26,7 +27,6 @@
       color: @text-color-secondary-black; //CHANGED(Noah) @heading-color
       font-weight: 500;
       font-size: @font-size-lg;
-      line-height: 1.4;
       display: block;
       // create BFC to avoid
       // https://user-images.githubusercontent.com/507615/37702510-ba844e06-2d2d-11e8-9b67-8e19be57f445.png
@@ -34,14 +34,14 @@
     }
 
     .@{confirm-prefix-cls}-content {
-      margin-left: 38px;
+      margin-left: @confirm-icon-size + 16px;
       font-size: @font-size-base;
       color: @text-color-secondary-black; //CHANGED(Noah) #fff// @text-color; //CHANGED(Jiacui)
       margin-top: 8px;
     }
 
     > .@{iconfont-css-prefix} {
-      font-size: 22px;
+      font-size: @confirm-icon-size;
       margin-right: 16px;
       float: left;
     }
@@ -70,9 +70,6 @@
 
   &-error &-body > .@{iconfont-css-prefix} {
     color: @error-color;
-  }
-  &-error .@{confirm-prefix-cls}-btns > button { //ADDED(Noah)
-    color: @heading-color-dark;
   }
 
   &-warning &-body > .@{iconfont-css-prefix},

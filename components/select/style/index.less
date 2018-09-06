@@ -77,7 +77,7 @@
     display: block;
 
     background-color: @component-background;
-    border-radius: 4px; // @border-radius-base; //CHANGED(Noah)
+    border-radius: 4px; //CHANGED(Noah) @border-radius-base; 
     border: @border-width-base @border-style-base @border-color-base;
     // strange align fix for chrome but works
     // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
@@ -456,7 +456,7 @@
     margin-bottom: 0;
     padding-left: 0; // Override default ul/ol
     list-style: none;
-    max-height: 190px; //250px; //CHANGED(Noah)
+    max-height: 190px; //CHANGED(Noah) 250px; 
     overflow: auto;
 
     &-item-group-list {
@@ -485,10 +485,10 @@
       position: relative;
       display: block;
       height: 40px; //ADDED(Noah)
-      padding: 10px @control-padding-horizontal; //5px @control-padding-horizontal; //CHANGED(Noah)
+      padding: 10px @control-padding-horizontal; //CHANGED(Noah) 5px @control-padding-horizontal; 
       line-height: 22px;
       font-weight: normal;
-      color: @text-color-black; //@text-color; //CHANGED(Noah)
+      color: @text-color-black; //CHANGED(Noah) @text-color; 
       white-space: nowrap;
       cursor: pointer;
       overflow: hidden;
@@ -496,7 +496,7 @@
       transition: background 0.3s ease;
 
       &:hover {
-        background-color: @primary-color; //@item-hover-bg; //CHANGED(Noah)
+        background-color: @primary-color; //CHANGED(Noah) @item-hover-bg; 
         color: @text-color-white; //ADDED(Noah)
       }
 
@@ -522,15 +522,15 @@
       &-selected {
         &,
         &:hover {
-          background-color: @primary-color; // @background-color-light; //CHANGED(Noah)
+          background-color: @primary-color; //CHANGED(Noah) @background-color-light; 
           font-weight: 600;
-          color: @text-color-white; //@text-color; //CHANGED(Noah)
+          color: @text-color-white; //CHANGED(Noah) @text-color; 
         }
       }
 
       &-active {
         color: @text-color-white; //ADDED(Noah)
-        background-color: @primary-color; // CHANGED(Noah) @item-active-bg;
+        background-color: @primary-color; //CHANGED(Noah) @item-active-bg;
       }
 
       &-divider {

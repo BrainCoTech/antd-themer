@@ -14,7 +14,7 @@
 
   .@{ant-prefix}-modal-body {
     padding: 32px 32px 24px;
-    background: @component-background;  //CHANGED(Noah) @primary-color //ADDED(Noah)
+    background: @component-background;  //ADDED(Noah)
     border-radius: @border-radius-base; //ADDED(Noah)
   }
 
@@ -36,7 +36,7 @@
     .@{confirm-prefix-cls}-content {
       margin-left: @confirm-icon-size + 16px;
       font-size: @font-size-base;
-      color: @text-color-secondary-black; //CHANGED(Noah) #fff// @text-color; //CHANGED(Jiacui)
+      color: @text-color-secondary-black; //CHANGED(Noah) @text-color
       margin-top: 8px;
     }
 
@@ -51,8 +51,8 @@
     margin-top: 24px;
     float: right;
     button {
-        border: solid 1px @normal-color; //CHANGED(NOAH) @text-color-dark; //ADDED(Noah)
-        color: @text-color-secondary-black; //CHANGED(Noah)@primary-color; //ADDED(Noah)
+        border: solid 1px @normal-color; //ADDED(Noah)
+        color: @text-color-secondary-black; //ADDED(Noah)
         border-radius: 16px; //ADDED(Noah) 
         height: 32px; //ADDED(Noah)
         width: 96px; //ADDED(Noah)
@@ -74,7 +74,7 @@
 
   &-warning &-body > .@{iconfont-css-prefix},
   &-confirm &-body > .@{iconfont-css-prefix} {
-    color: @processing-color; //CHANGED(Noah) @body-background //CHANGED(Noah) @warning-color;
+    color: @processing-color; //CHANGED(Noah) @warning-color;
   }
 
   &-info &-body > .@{iconfont-css-prefix} {

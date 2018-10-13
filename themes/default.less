@@ -45,7 +45,6 @@
 @text-color-secondary-black: #666666; //ADDED(Noah)
 @text-color-third-black: #999999; // ADDED(Noah)
 @text-color-white       : #fff; //ADDED(Noah)
-@heading-color-grey     : @text-color-secondary; //ADDED(Noah)
 @heading-color-dark     : fade(#fff, 100%);
 @text-color-dark        : fade(#fff, 85%);
 @text-color-secondary-dark: fade(#fff, 65%);
@@ -76,7 +75,6 @@
 // ICONFONT
 @iconfont-css-prefix    : anticon;
 //@icon-url               : "../fonts/anticon/anticon";// CHANGED(Adis):
-@icon-url               : "https://at.alicdn.com/t/font_148784_v4ggb6wrjmkotj4i";
 
 // LINK
 @link-color             : @primary-color;
@@ -86,6 +84,8 @@
 @link-hover-decoration  : none;
 
 // Animation
+@ease-base-out       : cubic-bezier(0.7, 0.3, 0.1, 1);
+@ease-base-in        : cubic-bezier(0.9, 0, 0.3, 0.7);
 @ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
 @ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
 @ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -124,7 +124,7 @@
 @shadow-color           : rgba(216, 216, 216, 0.5);//CHANGED(Adis): rgba(0, 0, 0, .15);
 @box-shadow-base        : @shadow-1-down;
 @shadow-popconfirm      : 0 2px 18px 2px @shadow-color; //ADDED(Noah)
-@shadow-1-up            : 0 2px 8px @shadow-color;
+@shadow-1-up            : 0 -2px 8px @shadow-color;
 @shadow-1-down          : 0 2px 8px @shadow-color;
 @shadow-1-left          : -2px 0 8px @shadow-color;
 @shadow-1-right         : 2px 0 8px @shadow-color;
@@ -325,6 +325,7 @@
 // --
 @progress-default-color: @processing-color;
 @progress-remaining-color: @background-color-base;
+@progress-text-color: @text-color;
 
 // Menu
 // ---
@@ -335,6 +336,7 @@
 @menu-item-color: @text-color;
 @menu-highlight-color: @primary-color;
 @menu-item-active-bg: @item-active-bg;
+@menu-item-active-border-width: 3px;
 @menu-item-group-title-color: @text-color-secondary;
 // dark theme
 @menu-dark-color: @text-color-secondary-dark;
@@ -353,6 +355,7 @@
 // Table
 // --
 @table-header-bg: transparent; //CHANGED(Noah): @background-color-light
+@table-header-color: @text-color-secondary; //CHANGED(Adis): @heading-color;
 @table-row-bg: @background-color-light; //ADDED(Noah); @background-color-base
 @table-header-sort-bg: @background-color-base;
 @table-row-hover-bg: @primary-1;
@@ -460,7 +463,7 @@
 @breadcrumb-base-color:        @text-color-secondary;
 @breadcrumb-last-item-color:   @text-color;
 @breadcrumb-font-size:         @font-size-base;
-@breadcrumb-icon-font-size:    @font-size-sm;
+@breadcrumb-icon-font-size:    @font-size-base;
 @breadcrumb-link-color:        @text-color-secondary;
 @breadcrumb-link-color-hover:  @primary-5;
 @breadcrumb-separator-color:   @text-color-secondary;
@@ -496,6 +499,10 @@
 @collapse-header-bg:                  @background-color-light;
 @collapse-content-padding:            @padding-md;
 @collapse-content-bg:                 @component-background;
+
+// Skeleton
+// ---
+@skeleton-color:                      #f2f2f2;
 
 // Message
 // ---

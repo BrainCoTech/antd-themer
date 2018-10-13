@@ -5,11 +5,11 @@
 @process-icon-color: @primary-color;
 @process-title-color: @heading-color;
 @process-description-color: @text-color;
-@process-tail-color: @border-color-reg; //@border-color-split; //CHANGED(Noah)  
+@process-tail-color: @border-color-reg; //CHANGED(Noah) @border-color-split; 
 @process-icon-text-color: #fff;
 @process-title-size: 14px; // ADDED(Noah)
 @wait-icon-color: @disabled-color;
-@wait-title-color: @text-color-third-black;// @text-color-secondary; CHANGED(Noah)
+@wait-title-color: @text-color-third-black; //CHANGED(Noah) @text-color-secondary;
 @wait-title-size: 12px; //ADDED(Noah)
 @wait-description-color: @wait-title-color;
 @wait-tail-color: @process-tail-color;
@@ -28,7 +28,7 @@
 @steps-icon-size: 32px;
 @steps-small-icon-size: 24px;
 @steps-dot-size: 8px;
-@steps-current-dot-size: 8px; //10px CHANGED(Noah) 
+@steps-current-dot-size: 8px; //CHANGED(Noah) 10px 
 @steps-desciption-max-width: 140px;
 
 .@{steps-prefix-cls} {
@@ -153,6 +153,7 @@
     }
     &-description {
       max-width: @steps-desciption-max-width;
+      white-space: normal;
     }
   }
 }
@@ -175,7 +176,7 @@
   }
   &-@{status} > &-content > &-title {
     color: @@title-color;
-    font-size: @@title-size;
+    font-size: @@title-size; //ADDED(Noah);
     &:after {
       background-color: @@tail-color;
     }

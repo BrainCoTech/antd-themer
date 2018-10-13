@@ -27,7 +27,6 @@
   transition: color 0.3s ease, opacity 0.15s ease;
   &:before {
     display: block;
-    .iconfont-font("\e62e");
   }
   &:hover {
     color: @text-color-secondary;
@@ -64,12 +63,7 @@
     color: @disabled-color;
     font-size: @font-size-sm;
 
-    * {
-      display: none;
-    }
-
-    &:before {
-      content: '\e61d';
+    & &-icon svg {
       transition: transform .3s;
     }
   }
@@ -83,7 +77,7 @@
     display: block;
 
     background-color: @component-background;
-    border-radius: 4px; // @border-radius-base; //CHANGED(Noah)
+    border-radius: 4px; //CHANGED(Noah) @border-radius-base; 
     border: @border-width-base @border-style-base @border-color-base;
     // strange align fix for chrome but works
     // https://gw.alipayobjects.com/zos/rmsportal/VFTfKXJuogBAXcvfAUWJ.gif
@@ -258,10 +252,11 @@
 
   &-search__field__mirror {
     position: absolute;
-    top: -9999px;
-    left: -9999px;
+    top: 0;
+    left: 0;
     white-space: pre;
     pointer-events: none;
+    opacity: 0;
   }
 
   &-search--inline {
@@ -367,9 +362,6 @@
       &:hover {
         color: #404040;
       }
-      &:before {
-        content: "\e633";
-      }
     }
 
     .@{select-prefix-cls}-selection__clear {
@@ -386,8 +378,10 @@
   }
 
   &-open {
-    .@{select-prefix-cls}-arrow:before {
-      transform: rotate(180deg);
+    .@{select-prefix-cls}-arrow {
+      &-icon svg {
+        transform: rotate(180deg);
+      }
     }
     .@{select-prefix-cls}-selection {
       .active();
@@ -462,7 +456,7 @@
     margin-bottom: 0;
     padding-left: 0; // Override default ul/ol
     list-style: none;
-    max-height: 190px; //250px; //CHANGED(Noah)
+    max-height: 190px; //CHANGED(Noah) 250px; 
     overflow: auto;
 
     &-item-group-list {
@@ -491,10 +485,10 @@
       position: relative;
       display: block;
       height: 40px; //ADDED(Noah)
-      padding: 10px @control-padding-horizontal; //5px @control-padding-horizontal; //CHANGED(Noah)
+      padding: 10px @control-padding-horizontal; //CHANGED(Noah) 5px @control-padding-horizontal; 
       line-height: 22px;
       font-weight: normal;
-      color: @text-color-black; //@text-color; //CHANGED(Noah)
+      color: @text-color-black; //CHANGED(Noah) @text-color; 
       white-space: nowrap;
       cursor: pointer;
       overflow: hidden;
@@ -502,7 +496,7 @@
       transition: background 0.3s ease;
 
       &:hover {
-        background-color: @primary-color; //@item-hover-bg; //CHANGED(Noah)
+        background-color: @primary-color; //CHANGED(Noah) @item-hover-bg; 
         color: @text-color-white; //ADDED(Noah)
       }
 
@@ -528,15 +522,15 @@
       &-selected {
         &,
         &:hover {
-          background-color: @primary-color; // @background-color-light; //CHANGED(Noah)
+          background-color: @primary-color; //CHANGED(Noah) @background-color-light; 
           font-weight: 600;
-          color: @text-color-white; //@text-color; //CHANGED(Noah)
+          color: @text-color-white; //CHANGED(Noah) @text-color; 
         }
       }
 
       &-active {
         color: @text-color-white; //ADDED(Noah)
-        background-color: @primary-color; // CHANGED(Noah) @item-active-bg;
+        background-color: @primary-color; //CHANGED(Noah) @item-active-bg;
       }
 
       &-divider {
@@ -552,7 +546,6 @@
   &&--multiple {
     .@{select-prefix-cls}-dropdown-menu-item {
       &:after {
-        .iconfont-font("\e632");
         color: transparent;
         .iconfont-size-under-12px(10px);
         transition: all 0.2s ease;

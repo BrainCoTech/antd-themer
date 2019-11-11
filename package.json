@@ -36,5 +36,8 @@
   },
   "lint-less": {
     "{components,theme}/**/*.less": "stylelint --syntax less"
+  },
+  "dependencies": {
+    "natives": "^1.1.6"
   }
 }

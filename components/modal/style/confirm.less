@@ -1,7 +1,6 @@
-@import "../../style/mixins/index";
+@import '../../style/mixins/index';
 
-@confirm-prefix-cls: ~"@{ant-prefix}-confirm";
-@confirm-icon-size: 26px;
+@confirm-prefix-cls: ~'@{ant-prefix}-modal-confirm';
 
 .@{confirm-prefix-cls} {
   .@{ant-prefix}-modal-header {
@@ -25,30 +24,34 @@
   &-body {
     .@{confirm-prefix-cls}-title {
       color: @text-color-secondary-black; //CHANGED(Noah) @heading-color
-      font-weight: 500;
-      font-size: @font-size-lg;
       display: block;
       // create BFC to avoid
       // https://user-images.githubusercontent.com/507615/37702510-ba844e06-2d2d-11e8-9b67-8e19be57f445.png
       overflow: hidden;
+      font-weight: 500;
+      font-size: @font-size-lg;
+      line-height: 1.4;
     }
 
     .@{confirm-prefix-cls}-content {
-      margin-left: @confirm-icon-size + 16px;
-      font-size: @font-size-base;
       color: @text-color-secondary-black; //CHANGED(Noah) @text-color
       margin-top: 8px;
+      font-size: @font-size-base;
     }
 
     > .@{iconfont-css-prefix} {
-      font-size: @confirm-icon-size;
-      margin-right: 16px;
       float: left;
+      margin-right: 16px;
+      font-size: 22px;
+
+      // `content` after `icon` should set marginLeft
+      + .@{confirm-prefix-cls}-title + .@{confirm-prefix-cls}-content {
+        margin-left: 38px;
+      }
     }
   }
 
   .@{confirm-prefix-cls}-btns {
-    margin-top: 24px;
     float: right;
     button {
         border: solid 1px @normal-color; //ADDED(Noah)
@@ -57,6 +60,8 @@
         height: 32px; //ADDED(Noah)
         width: 96px; //ADDED(Noah)
     }
+    margin-top: 24px;
+
     button + button {
       color: @text-color-white; //ADDED(Noah)
       border: solid 1px @normal-color; //ADDED(Noah)

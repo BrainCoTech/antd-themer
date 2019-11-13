@@ -22591,7 +22591,7 @@ tr.ant-table-expanded-row td > .ant-table-wrapper {
   padding-bottom: 34px;
 }
 .ant-transfer-list-search {
-  padding: 0 8px;
+  padding: 0 24px 0 8px;
 }
 .ant-transfer-list-search-action {
   position: absolute;
